@@ -1,13 +1,13 @@
-*resharper.user
 [Dd]ebug/
 [Rr]elease/
-build/
+[Bb]uild/
 [Bb]in/
 [Oo]bj/
 [Hh]elp/
 [Pp]ackages/
 *.suo
 *.sln.cache
+*resharper.user
 _ReSharper.*/
 *.user
 *.InstallLog
