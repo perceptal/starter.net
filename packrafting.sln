@@ -22,9 +22,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web", "source\Common.Web\Common.Web.csproj", "{B76CA656-5BD1-4069-8312-7CF1ED48AB23}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{7520B7CD-B253-435E-AE0C-A8BB620912DD}"
-	ProjectSection(SolutionItems) = preProject
-		0001.sql = source\Migrations\0001.sql
-	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2A5331CD-78C0-4037-A072-2C26B003BBFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Utility", "Common.Utility\Common.Utility.csproj", "{59C5298E-ECE8-48E8-9666-33F6A73C17A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +61,10 @@ Global
 		{B76CA656-5BD1-4069-8312-7CF1ED48AB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B76CA656-5BD1-4069-8312-7CF1ED48AB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B76CA656-5BD1-4069-8312-7CF1ED48AB23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C5298E-ECE8-48E8-9666-33F6A73C17A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C5298E-ECE8-48E8-9666-33F6A73C17A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C5298E-ECE8-48E8-9666-33F6A73C17A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C5298E-ECE8-48E8-9666-33F6A73C17A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +77,6 @@ Global
 		{0744A62B-526F-4568-8180-C8998D976EA1} = {866F20A8-DE99-440D-86E8-8FA334D48502}
 		{2763AA19-B4F9-491E-B077-8B1F07A8B789} = {866F20A8-DE99-440D-86E8-8FA334D48502}
 		{954D7476-944E-4D88-8E74-D54ED5425234} = {866F20A8-DE99-440D-86E8-8FA334D48502}
+		{59C5298E-ECE8-48E8-9666-33F6A73C17A4} = {2A5331CD-78C0-4037-A072-2C26B003BBFA}
 	EndGlobalSection
 EndGlobal
