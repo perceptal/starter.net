@@ -173,7 +173,7 @@
     </XmlPeek>
     <Exec Command="&quot;$(SolutionDir)Tools\DbUp.Console&quot; -cs &quot;@(ConnectionString)&quot; -d $(MSBuildThisFileDirectory)..\Migrations" />
     <!-- This is the only way to have some debug statements visible in the build log -->
-    <Warning Text="Database upgraded" />
+    <Warning Text="Database upgraded [@(ConnectionString)]" />
   </Target>
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
