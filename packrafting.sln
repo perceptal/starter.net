@@ -21,6 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain.Specification
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web", "source\Common.Web\Common.Web.csproj", "{B76CA656-5BD1-4069-8312-7CF1ED48AB23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{7520B7CD-B253-435E-AE0C-A8BB620912DD}"
+	ProjectSection(SolutionItems) = preProject
+		0001.sql = source\Migrations\0001.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
