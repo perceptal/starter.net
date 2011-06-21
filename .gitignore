@@ -13,5 +13,3 @@ _ReSharper.*/
 *.InstallLog
 VERSION
 *.nupkg
-
-Web.Release.config
