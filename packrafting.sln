@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Web", "Packrafting.Web\Packrafting.Web.csproj", "{3BFA4E2B-C7B4-4B29-93D5-D028133E1AEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Web", "source\Packrafting.Web\Packrafting.Web.csproj", "{3BFA4E2B-C7B4-4B29-93D5-D028133E1AEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain", "Common.Domain\Common.Domain.csproj", "{74471C48-0190-42E4-A3C0-404AD26A2936}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain", "source\Common.Domain\Common.Domain.csproj", "{74471C48-0190-42E4-A3C0-404AD26A2936}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Domain", "Packrafting.Domain\Packrafting.Domain.csproj", "{8850D056-C0FA-45EF-9F16-6664F3658544}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Domain", "source\Packrafting.Domain\Packrafting.Domain.csproj", "{8850D056-C0FA-45EF-9F16-6664F3658544}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{448DE961-495D-4951-A3E7-8E3CB5C710B3}"
 EndProject
@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{AE25AE71-005
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specifications", "Specifications", "{866F20A8-DE99-440D-86E8-8FA334D48502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Web.Specifications", "Packrafting.Web.Specifications\Packrafting.Web.Specifications.csproj", "{0744A62B-526F-4568-8180-C8998D976EA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Web.Specifications", "source\Packrafting.Web.Specifications\Packrafting.Web.Specifications.csproj", "{0744A62B-526F-4568-8180-C8998D976EA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Domain.Specifications", "Packrafting.Domain.Specifications\Packrafting.Domain.Specifications.csproj", "{2763AA19-B4F9-491E-B077-8B1F07A8B789}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Domain.Specifications", "source\Packrafting.Domain.Specifications\Packrafting.Domain.Specifications.csproj", "{2763AA19-B4F9-491E-B077-8B1F07A8B789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain.Specifications", "Common.Domain.Specifications\Common.Domain.Specifications.csproj", "{954D7476-944E-4D88-8E74-D54ED5425234}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain.Specifications", "source\Common.Domain.Specifications\Common.Domain.Specifications.csproj", "{954D7476-944E-4D88-8E74-D54ED5425234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web", "source\Common.Web\Common.Web.csproj", "{B76CA656-5BD1-4069-8312-7CF1ED48AB23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,14 +51,19 @@ Global
 		{954D7476-944E-4D88-8E74-D54ED5425234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{954D7476-944E-4D88-8E74-D54ED5425234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{954D7476-944E-4D88-8E74-D54ED5425234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B76CA656-5BD1-4069-8312-7CF1ED48AB23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76CA656-5BD1-4069-8312-7CF1ED48AB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76CA656-5BD1-4069-8312-7CF1ED48AB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76CA656-5BD1-4069-8312-7CF1ED48AB23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{74471C48-0190-42E4-A3C0-404AD26A2936} = {448DE961-495D-4951-A3E7-8E3CB5C710B3}
-		{8850D056-C0FA-45EF-9F16-6664F3658544} = {448DE961-495D-4951-A3E7-8E3CB5C710B3}
 		{3BFA4E2B-C7B4-4B29-93D5-D028133E1AEB} = {AE25AE71-0050-4F7E-8A91-8BFE81D1DA66}
+		{B76CA656-5BD1-4069-8312-7CF1ED48AB23} = {AE25AE71-0050-4F7E-8A91-8BFE81D1DA66}
+		{8850D056-C0FA-45EF-9F16-6664F3658544} = {448DE961-495D-4951-A3E7-8E3CB5C710B3}
+		{74471C48-0190-42E4-A3C0-404AD26A2936} = {448DE961-495D-4951-A3E7-8E3CB5C710B3}
 		{0744A62B-526F-4568-8180-C8998D976EA1} = {866F20A8-DE99-440D-86E8-8FA334D48502}
 		{2763AA19-B4F9-491E-B077-8B1F07A8B789} = {866F20A8-DE99-440D-86E8-8FA334D48502}
 		{954D7476-944E-4D88-8E74-D54ED5425234} = {866F20A8-DE99-440D-86E8-8FA334D48502}
