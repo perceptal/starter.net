@@ -14,3 +14,4 @@ _ReSharper.*/
 VERSION
 *.nupkg
 
+Web.Release.config
