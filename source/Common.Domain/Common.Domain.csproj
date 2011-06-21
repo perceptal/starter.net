@@ -59,7 +59,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Common.Utility\Common.Utility.csproj">
+    <ProjectReference Include="..\Common.Utility\Common.Utility.csproj">
       <Project>{59C5298E-ECE8-48E8-9666-33F6A73C17A4}</Project>
       <Name>Common.Utility</Name>
     </ProjectReference>
