@@ -162,12 +162,10 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <Target Name="BeforeBuild">
     <Exec Command="&quot;$(SolutionDir)Tools\NuGet&quot; install &quot;$(ProjectDir)packages.config&quot; -o &quot;$(SolutionDir)packages&quot;" />
+  </Target>
+  <Target Name="AfterBuild">
     <CallTarget Targets="UpgradeDatabase" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="AfterBuild">
-  </Target> -->
   <Target Name="UpgradeDatabase">
     <XmlPeek XmlInputPath="$(MSBuildThisFileDirectory)web.config"
              Query="/configuration/connectionStrings/add[@name='packrafting']/@connectionString">
