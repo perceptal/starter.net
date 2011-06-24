@@ -26,7 +26,7 @@ namespace Packrafting.Web.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult SignOn(SignOnModel model)
         {
-            var authenticated = this.Authentication.Authenticate(new User());
+            var authenticated = this.Authentication.Authenticate(new Member());
 
             ViewBag.Message = authenticated.ToString();
 

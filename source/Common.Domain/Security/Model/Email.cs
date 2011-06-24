@@ -4,23 +4,19 @@ using Core.Domain;
 
 namespace Common.Domain
 {
-    public class Password : ValueObject<Password>
+    public class Email : ValueObject<Email>
     {
-        public Password() {}
+        public Email() {}
 
-        public Password(string password, string salt)
+        public Email(string email)
         {
-            this.Salt = salt;
-            this.Value = password;
+            this.Value = email;
         }
-
-        public string Salt { get; private set; }
 
         public string Value { get; private set; }
 
         protected override IEnumerable<object> Reflect()
         {
-            yield return Salt;
             yield return Value;
         }
     }

@@ -9,7 +9,9 @@ namespace Core.Config
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<Repository>().As<IRepository>();
+            builder.RegisterGeneric(typeof(Repository<>))
+                .As(typeof(IRepository<>))
+                .InstancePerLifetimeScope();
         }
     }
 }

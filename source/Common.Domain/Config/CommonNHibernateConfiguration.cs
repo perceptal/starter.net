@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentNHibernate;
 using FluentNHibernate.Automapping;
 
 namespace Common.Domain.Config
@@ -12,7 +13,12 @@ namespace Common.Domain.Config
 
         public override bool IsComponent(Type type)
         {
-            return type == typeof(Password);
+            return type == typeof(Password) || type == typeof(Email);
+        }
+
+        public override string GetComponentColumnPrefix(FluentNHibernate.Member member)
+        {
+            return string.Empty;
         }
     }
 }

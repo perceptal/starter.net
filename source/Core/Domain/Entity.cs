@@ -9,15 +9,20 @@
         /// To help ensure hashcode uniqueness, a carefully selected random number multiplier
         /// is used within the calculation.  Goodrich and Tamassia's Data Structures and
         /// Algorithms asserts that 31, 33, 37, 39 and 41 will produce the fewest number
-        /// of collissions.  See http://computinglife.wordpress.com/2008/11/20/why-do-hash-functions-use-prime-numbers/
+        /// of collisions.  See http://computinglife.wordpress.com/2008/11/20/why-do-hash-functions-use-prime-numbers/
         /// for more information.
         /// </summary>
         private const int HashMultiplier = 31;
 
+        private int _id;
+
         /// <summary>
         /// Id of the object
         /// </summary>
-        public virtual int Id { get; set; }
+        public virtual int Id 
+        { 
+            get { return _id; } 
+        }
 
         public override bool Equals(object other)
         {

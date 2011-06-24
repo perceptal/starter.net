@@ -63,12 +63,15 @@
   <ItemGroup>
     <Compile Include="Config\CommonDomainModule.cs" />
     <Compile Include="Config\CommonNHibernateConfiguration.cs" />
+    <Compile Include="Config\EmailMappingOverride.cs" />
+    <Compile Include="Config\PasswordMappingOverride.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\Config\UserMap.cs" />
+    <Compile Include="Security\Model\Role.cs" />
+    <Compile Include="Security\Model\Email.cs" />
     <Compile Include="Security\Model\Password.cs" />
-    <Compile Include="Security\Model\User.cs" />
-    <Compile Include="Security\Repository\Interface\IUserRepository.cs" />
-    <Compile Include="Security\Repository\UserRepository.cs" />
+    <Compile Include="Security\Model\Member.cs" />
+    <Compile Include="Security\Repository\Interface\IMemberRepository.cs" />
+    <Compile Include="Security\Repository\MemberRepository.cs" />
     <Compile Include="Security\Service\AuthenticationService.cs" />
     <Compile Include="Security\Service\Interface\IAuthenticationService.cs" />
     <Compile Include="Security\Utility\AuthenticationPolicyProviderBase.cs" />
@@ -90,6 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Security\Config\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="BeforeBuild">

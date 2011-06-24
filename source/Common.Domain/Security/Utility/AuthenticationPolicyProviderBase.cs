@@ -27,11 +27,7 @@ namespace Common.Domain.Implementation
         {
             String salt = this.SaltProvider.GenerateSalt();
 
-            return new Password
-            {
-                Salt = salt,
-                Value = this.HashProvider.HashData(logon + password + salt)
-            };
+            return new Password(salt, this.HashProvider.HashData(logon + password + salt));
         }
     }
 }

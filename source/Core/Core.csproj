@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Conventions\CustomForeignKeyConvention.cs" />
+    <Compile Include="Config\Conventions\DefaultStringLengthConvention.cs" />
     <Compile Include="Config\Conventions\PrimaryKeyConvention.cs" />
     <Compile Include="Config\CoreModule.cs" />
     <Compile Include="Config\DomainModule.cs" />

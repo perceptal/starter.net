@@ -1,10 +1,11 @@
 ﻿using System;
 using Core.Config;
 using Core.Domain;
-using FluentNHibernate.Cfg;
 using FluentNHibernate.Automapping;
+using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Tool.hbm2ddl;
 
 namespace Core.Persistence.Implementation
 {
@@ -13,10 +14,20 @@ namespace Core.Persistence.Implementation
         public ISessionFactory Build<T>(string application, DefaultAutomappingConfiguration config)
         {
             return Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey(application)))
+
+                .Database(MsSqlConfiguration.MsSql2005.ConnectionString(c => c.FromConnectionStringWithKey(application)))
+
                 .Mappings(m => m.AutoMappings.Add(AutoMap.AssemblyOf<T>(config)
+                                    .UseOverridesFromAssemblyOf<T>()
                                     .IgnoreBase<Entity>()
-                                    .Conventions.Setup(c => c.Add<PrimaryKeyConvention>())))
+                                    .Conventions.Setup(c =>
+                                        {
+                                            c.Add<PrimaryKeyConvention>();
+                                            c.Add<CustomForeignKeyConvention>();
+                                            c.Add<DefaultStringLengthConvention>();
+                                        })))
+
+                .ExposeConfiguration(c => new SchemaUpdate(c).Execute(true, true))
 
                 .BuildSessionFactory();
         }

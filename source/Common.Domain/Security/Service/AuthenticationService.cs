@@ -7,17 +7,17 @@ namespace Common.Domain.Implementation
 {
     public class AuthenticationService : IAuthenticationService
     {
-        public AuthenticationService(IUserRepository repository, IAuthenticationPolicyProvider policy)
+        public AuthenticationService(IMemberRepository repository, IAuthenticationPolicyProvider policy)
         {
             this.Repository = repository;
             this.Policy = policy;
         }
 
-        private IUserRepository Repository { get; set; }
+        private IMemberRepository Repository { get; set; }
 
         private IAuthenticationPolicyProvider Policy { get; set; }
 
-        public bool Authenticate(User user)
+        public bool Authenticate(Member user)
         {
             return true;
         }

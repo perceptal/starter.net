@@ -8,7 +8,7 @@ using NHibernate;
 
 namespace Common.Domain.Config
 {
-    public class CommonDomainModule : DomainModule<User>
+    public class CommonDomainModule : DomainModule<Member>
     {
         public CommonDomainModule(string application)
             : base(application, new CommonNHibernateConfiguration())
