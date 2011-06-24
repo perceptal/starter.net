@@ -11,9 +11,9 @@ namespace Core.Persistence.Implementation
     /// </summary>
     public class Repository<T> : IRepository<T>
     {
-        public Repository(ISessionFactory factory)
+        public Repository(ISession session)
         {
-            this.Session = factory.OpenSession();
+            this.Session = session;
         }
 
         public ISession Session { get;  private set; }

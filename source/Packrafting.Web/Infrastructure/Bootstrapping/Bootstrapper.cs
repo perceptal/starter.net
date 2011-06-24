@@ -20,6 +20,7 @@ namespace Packrafting.Web
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
+            builder.RegisterModule(new AutofacWebTypesModule());
             builder.RegisterModule(new CoreModule());
             builder.RegisterModule(new CommonDomainModule("packrafting"));
 

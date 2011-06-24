@@ -74,6 +74,7 @@
     <Compile Include="Security\Repository\MemberRepository.cs" />
     <Compile Include="Security\Service\AuthenticationService.cs" />
     <Compile Include="Security\Service\Interface\IAuthenticationService.cs" />
+    <Compile Include="Security\Service\Interface\IMembershipService.cs" />
     <Compile Include="Security\Utility\AuthenticationPolicyProviderBase.cs" />
     <Compile Include="Security\Utility\CryptoSaltProvider.cs" />
     <Compile Include="Security\Utility\FormsAuthenticationHashProvider.cs" />

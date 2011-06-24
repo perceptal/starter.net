@@ -56,6 +56,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +65,7 @@
     <Compile Include="Config\Conventions\PrimaryKeyConvention.cs" />
     <Compile Include="Config\CoreModule.cs" />
     <Compile Include="Config\DomainModule.cs" />
+    <Compile Include="Disposable.cs" />
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\IdBasedEqualityComparer.cs" />
     <Compile Include="Domain\Interface\IHaveId.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="NHibernate\Interface\IRepository.cs" />
     <Compile Include="NHibernate\Repository.cs" />
     <Compile Include="NHibernate\Sql2008SessionFactory.cs" />
+    <Compile Include="NHibernate\TransactionTracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
