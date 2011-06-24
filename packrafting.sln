@@ -19,13 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packrafting.Domain.Specific
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Domain.Specifications", "source\Common.Domain.Specifications\Common.Domain.Specifications.csproj", "{954D7476-944E-4D88-8E74-D54ED5425234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web", "source\Common.Web\Common.Web.csproj", "{B76CA656-5BD1-4069-8312-7CF1ED48AB23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Web", "source\Core.Web\Core.Web.csproj", "{B76CA656-5BD1-4069-8312-7CF1ED48AB23}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{7520B7CD-B253-435E-AE0C-A8BB620912DD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2A5331CD-78C0-4037-A072-2C26B003BBFA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2A5331CD-78C0-4037-A072-2C26B003BBFA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Utility", "source\Common.Utility\Common.Utility.csproj", "{59C5298E-ECE8-48E8-9666-33F6A73C17A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "source\Core\Core.csproj", "{59C5298E-ECE8-48E8-9666-33F6A73C17A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

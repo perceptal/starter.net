@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.2.4.5.724\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\..\packages\Autofac.2.4.5.724\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\packages\Autofac.Mvc3.2.4.5.724\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\..\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
     </Reference>
@@ -76,12 +85,17 @@
     <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\Bootstrapper.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\FilterRegistrar.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\RouteConfigurator.cs" />
+    <Compile Include="Models\Security\RegisterModel.cs" />
+    <Compile Include="Models\Security\ChangePasswordModel.cs" />
+    <Compile Include="Models\Security\SignOnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,10 +157,10 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
-    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Authentication\ChangePassword.cshtml" />
+    <Content Include="Views\Authentication\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Authentication\SignOn.cshtml" />
+    <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -154,7 +168,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Domain\Common.Domain.csproj">
+      <Project>{74471C48-0190-42E4-A3C0-404AD26A2936}</Project>
+      <Name>Common.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{59C5298E-ECE8-48E8-9666-33F6A73C17A4}</Project>
+      <Name>Core %28Core\Core%29</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -163,18 +186,8 @@
   <Target Name="BeforeBuild">
     <Exec Command="&quot;$(SolutionDir)Tools\NuGet&quot; install &quot;$(ProjectDir)packages.config&quot; -o &quot;$(SolutionDir)packages&quot;" />
   </Target>
-  <Target Name="AfterBuild">
-    <CallTarget Targets="UpgradeDatabase" />
-  </Target>
-  <Target Name="UpgradeDatabase">
-    <XmlPeek XmlInputPath="$(MSBuildThisFileDirectory)web.config"
-             Query="/configuration/connectionStrings/add[@name='packrafting']/@connectionString">
-      <Output TaskParameter="Result" ItemName="ConnectionString" />
-    </XmlPeek>
-    <Exec Command="&quot;$(SolutionDir)Tools\DbUp.Console&quot; -cs &quot;@(ConnectionString)&quot; -d $(MSBuildThisFileDirectory)..\Migrations" />
-    <!-- This is the only way to have some debug statements visible in the build log -->
-    <Warning Text="Database upgraded [@(ConnectionString)]" />
-  </Target>
+  <!--  <Target Name="AfterBuild">
+  </Target> -->
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
     <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
   </Target>

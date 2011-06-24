@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{74471C48-0190-42E4-A3C0-404AD26A2936}</ProjectGuid>
+    <ProjectGuid>{B76CA656-5BD1-4069-8312-7CF1ED48AB23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Domain</RootNamespace>
-    <AssemblyName>Common.Domain</AssemblyName>
+    <RootNamespace>Core.Web</RootNamespace>
+    <AssemblyName>Core.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,59 +37,20 @@
     <Reference Include="Autofac.Configuration">
       <HintPath>..\..\packages\Autofac.2.4.5.724\lib\NET40\Autofac.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core">
-      <HintPath>..\..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentNHibernate">
-      <HintPath>..\..\packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\..\packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\..\packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle">
-      <HintPath>..\..\packages\NHibernate.Castle.3.1.0.4000\lib\Net35\NHibernate.ByteCode.Castle.dll</HintPath>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\packages\Autofac.Mvc3.2.4.5.724\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\CommonDomainModule.cs" />
-    <Compile Include="Config\CommonNHibernateConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\Config\UserMap.cs" />
-    <Compile Include="Security\Model\Password.cs" />
-    <Compile Include="Security\Model\User.cs" />
-    <Compile Include="Security\Repository\Interface\IUserRepository.cs" />
-    <Compile Include="Security\Repository\UserRepository.cs" />
-    <Compile Include="Security\Service\AuthenticationService.cs" />
-    <Compile Include="Security\Service\Interface\IAuthenticationService.cs" />
-    <Compile Include="Security\Utility\AuthenticationPolicyProviderBase.cs" />
-    <Compile Include="Security\Utility\CryptoSaltProvider.cs" />
-    <Compile Include="Security\Utility\FormsAuthenticationHashProvider.cs" />
-    <Compile Include="Security\Utility\AuthenticationPolicyProvider.cs" />
-    <Compile Include="Security\Utility\Interface\IAuthenticationPolicyProvider.cs" />
-    <Compile Include="Security\Utility\Interface\IHashProvider.cs" />
-    <Compile Include="Security\Utility\Interface\ISaltProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{59C5298E-ECE8-48E8-9666-33F6A73C17A4}</Project>
-      <Name>Core %28Core\Core%29</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="BeforeBuild">
@@ -98,6 +59,5 @@
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="AfterBuild">
-  </Target>
-  -->
+  </Target> -->
 </Project>
