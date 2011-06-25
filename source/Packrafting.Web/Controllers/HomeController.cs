@@ -14,13 +14,15 @@ namespace Packrafting.Web.Controllers
 
         public ActionResult Index()
         {
-            var member = new Member() { Name = "Johnny Hall", Email = "johnny@recipher.co.uk" };
-            member.Accounts.Add(new Account("recipher", Site.Twitter));
+            //var member = new Member() { Name = "Johnny Hall", Email = "johnny@recipher.co.uk" };
+            //member.Accounts.Add(new Account("recipher", Site.Twitter));
             // member.Role = new Role() { Name = "administrator" };
 
-            this.Service.Register(member);
+            // this.Service.Register(member);
 
             ViewBag.Message = "Welcome to ASP.NET MVC!";
+
+            var app = new Setup().Define();
 
             return View();
         }

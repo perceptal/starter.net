@@ -22,7 +22,7 @@ namespace Packrafting.Web
 
             builder.RegisterModule(new AutofacWebTypesModule());
             builder.RegisterModule(new CoreModule());
-            builder.RegisterModule(new CommonDomainModule("packrafting"));
+            builder.RegisterModule(new CommonDomainModule(Application));
 
             var container = builder.Build();
 

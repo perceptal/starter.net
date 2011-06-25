@@ -47,6 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Navigation\Definition\Action.cs" />
+    <Compile Include="Navigation\Definition\Application.cs" />
+    <Compile Include="Navigation\Definition\Area.cs" />
+    <Compile Include="Navigation\Definition\Claim\Claim.cs" />
+    <Compile Include="Navigation\Definition\Claim\Creator.cs" />
+    <Compile Include="Navigation\Definition\Claim\Deleter.cs" />
+    <Compile Include="Navigation\Definition\Claim\Editor.cs" />
+    <Compile Include="Navigation\Definition\Controller.cs" />
+    <Compile Include="Navigation\Definition\Navigation.cs" />
+    <Compile Include="Navigation\Definition\Param.cs" />
+    <Compile Include="Navigation\Definition\Claim\Reader.cs" />
     <Compile Include="Navigation\Model\Page.cs" />
     <Compile Include="Navigation\Model\PageOption.cs" />
     <Compile Include="Navigation\Model\Parameter.cs" />

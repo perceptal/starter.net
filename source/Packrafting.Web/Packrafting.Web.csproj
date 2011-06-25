@@ -93,6 +93,7 @@
     <Compile Include="Infrastructure\Bootstrapping\Bootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\FilterRegistrar.cs" />
     <Compile Include="Infrastructure\Bootstrapping\RouteConfigurator.cs" />
+    <Compile Include="Infrastructure\Navigation\Setup.cs" />
     <Compile Include="Models\Security\RegisterModel.cs" />
     <Compile Include="Models\Security\ChangePasswordModel.cs" />
     <Compile Include="Models\Security\SignOnModel.cs" />
@@ -145,6 +146,10 @@
       <Project>{74471C48-0190-42E4-A3C0-404AD26A2936}</Project>
       <Name>Common.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core.Web\Core.Web.csproj">
+      <Project>{B76CA656-5BD1-4069-8312-7CF1ED48AB23}</Project>
+      <Name>Core.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{59C5298E-ECE8-48E8-9666-33F6A73C17A4}</Project>
       <Name>Core %28Core\Core%29</Name>
@@ -173,7 +178,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49471</DevelopmentServerPort>
+          <DevelopmentServerPort>53979</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
