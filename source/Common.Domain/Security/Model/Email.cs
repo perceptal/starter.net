@@ -15,6 +15,16 @@ namespace Common.Domain
 
         public string Value { get; private set; }
 
+        public static implicit operator Email(string email)
+        {
+            return new Email(email);
+        }
+
+        public static implicit operator string(Email email)
+        {
+            return email.Value;
+        }
+
         protected override IEnumerable<object> Reflect()
         {
             yield return Value;

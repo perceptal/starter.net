@@ -6,14 +6,19 @@ namespace Core.Persistence.Implementation
 {
     public class TransactionTracker : Disposable
     {
-        public ITransaction ActiveTransaction { get; set; }
+        private ITransaction ActiveTransaction { get; set; }
+
+        private HttpContextBase HttpContext { get; set; }
 
         public TransactionTracker(HttpContextBase context)
         {
             this.HttpContext = context;
         }
 
-        private HttpContextBase HttpContext { get; set; }
+        public void SetActive(ITransaction transaction)
+        {
+            this.ActiveTransaction = transaction;
+        }
 
         protected override void DisposeManagedResources()
         {

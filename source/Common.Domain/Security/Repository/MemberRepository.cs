@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Core.Persistence;
 
 namespace Common.Domain.Implementation
@@ -15,6 +17,11 @@ namespace Common.Domain.Implementation
         public Member GetByEmail(string email)
         {
             return this.Repository.FindBy(member => member.Email.Value == email);
+        }
+
+        public IList<Member> List()
+        {
+            return this.Repository.QueryAll().ToList();
         }
 
         public void Submit(Member member)

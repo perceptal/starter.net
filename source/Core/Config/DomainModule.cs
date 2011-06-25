@@ -33,10 +33,16 @@ namespace Core.Config
                     .InstancePerLifetimeScope()
                     .OnActivated(session =>
                         session.Context.Resolve<TransactionTracker>()
-                            .ActiveTransaction = ((ISession)session.Instance).BeginTransaction());
+                            .SetActive(((ISession)session.Instance).BeginTransaction()));
 
+            RegisterRepositories(builder);
+        }
+
+        private static void RegisterRepositories(ContainerBuilder builder)
+        {
             builder.RegisterAssemblyTypes(typeof(T).Assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces();
-        }    }
+        }    
+    }
 }

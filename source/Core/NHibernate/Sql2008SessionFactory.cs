@@ -13,7 +13,9 @@ namespace Core.Persistence.Implementation
     {
         public ISessionFactory Build<T>(string application, DefaultAutomappingConfiguration config)
         {
-            return Fluently.Configure()
+            string[] scripts = null;
+
+            var factory = Fluently.Configure()
 
                 .Database(MsSqlConfiguration.MsSql2005.ConnectionString(c => c.FromConnectionStringWithKey(application)))
 
@@ -27,9 +29,15 @@ namespace Core.Persistence.Implementation
                                             c.Add<DefaultStringLengthConvention>();
                                         })))
 
-                .ExposeConfiguration(c => new SchemaUpdate(c).Execute(true, true))
+                .ExposeConfiguration(c =>
+                {
+                    new SchemaUpdate(c).Execute(true, true);
+                    //scripts = c.GenerateSchemaUpdateScript(new NHibernate.Dialect.MsSql2005Dialect(), new DatabaseMetadata();
+                })
 
                 .BuildSessionFactory();
+
+            return factory;
         }
     }
 }

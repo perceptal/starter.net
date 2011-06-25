@@ -62,19 +62,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\CommonDomainModule.cs" />
-    <Compile Include="Config\CommonNHibernateConfiguration.cs" />
+    <Compile Include="Config\CommonAutomappingConfiguration.cs" />
+    <Compile Include="Config\RoleMappingOverride.cs" />
+    <Compile Include="Config\MemberMappingOverride.cs" />
     <Compile Include="Config\EmailMappingOverride.cs" />
     <Compile Include="Config\PasswordMappingOverride.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Model\Claim.cs" />
+    <Compile Include="Security\Model\Account.cs" />
+    <Compile Include="Security\Model\Right.cs" />
     <Compile Include="Security\Model\Role.cs" />
     <Compile Include="Security\Model\Email.cs" />
     <Compile Include="Security\Model\Password.cs" />
     <Compile Include="Security\Model\Member.cs" />
+    <Compile Include="Security\Model\Site.cs" />
     <Compile Include="Security\Repository\Interface\IMemberRepository.cs" />
     <Compile Include="Security\Repository\MemberRepository.cs" />
     <Compile Include="Security\Service\AuthenticationService.cs" />
     <Compile Include="Security\Service\Interface\IAuthenticationService.cs" />
     <Compile Include="Security\Service\Interface\IMembershipService.cs" />
+    <Compile Include="Security\Service\MembershipService.cs" />
     <Compile Include="Security\Utility\AuthenticationPolicyProviderBase.cs" />
     <Compile Include="Security\Utility\CryptoSaltProvider.cs" />
     <Compile Include="Security\Utility\FormsAuthenticationHashProvider.cs" />

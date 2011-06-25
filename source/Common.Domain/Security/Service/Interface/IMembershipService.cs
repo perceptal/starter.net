@@ -5,7 +5,7 @@ namespace Common.Domain
 {
     public interface IMembershipService
     {
-        Member Register();
+        Member Register(Member member);
 
         IList<Member> List();
     }

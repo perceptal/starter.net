@@ -18,6 +18,11 @@ namespace Common.Domain
 
         public string Value { get; private set; }
 
+        public static implicit operator string(Password password)
+        {
+            return password.Value;
+        }
+
         protected override IEnumerable<object> Reflect()
         {
             yield return Salt;

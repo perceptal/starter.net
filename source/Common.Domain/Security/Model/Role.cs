@@ -6,13 +6,13 @@ namespace Common.Domain
 {
     public class Role : Entity
     {
-        public Role() {}
-
-        public Role(string name)
+        public Role() 
         {
-            this.Name = name;
+            this.Claims = new HashSet<Claim>();
         }
 
         public virtual string Name { get; set; }
+
+        public virtual ICollection<Claim> Claims { get; set; }
     }
 }

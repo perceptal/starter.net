@@ -5,16 +5,20 @@ namespace Packrafting.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IMemberRepository repo)
+        public HomeController(IMembershipService service)
         {
-            this.Repository = repo;
+            this.Service = service;
         }
 
-        private IMemberRepository Repository { get; set; }
+        private IMembershipService Service { get; set; }
 
         public ActionResult Index()
         {
-            this.Repository.Submit(new Member() { Name = "Johnny Hall" });
+            var member = new Member() { Name = "Johnny Hall", Email = "johnny@recipher.co.uk" };
+            member.Accounts.Add(new Account("recipher", Site.Twitter));
+            // member.Role = new Role() { Name = "administrator" };
+
+            this.Service.Register(member);
 
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 

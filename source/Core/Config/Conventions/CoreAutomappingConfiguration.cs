@@ -1,19 +1,20 @@
 ﻿using System;
+using Core.Domain;
 using FluentNHibernate;
 using FluentNHibernate.Automapping;
 
-namespace Common.Domain.Config
+namespace Core.Config
 {
-    public class CommonNHibernateConfiguration : DefaultAutomappingConfiguration
+    public class CoreAutomappingConfiguration : DefaultAutomappingConfiguration
     {
         public override bool ShouldMap(Type type)
         {
-            return type.Namespace == "Common.Domain";
+            return type.Namespace.EndsWith(".Domain") && !type.Name.StartsWith("Core.");
         }
 
         public override bool IsComponent(Type type)
         {
-            return type == typeof(Password) || type == typeof(Email);
+            return type.IsTypeWithGenericDefinition(typeof(ValueObject<>)) || type.IsValueType;
         }
 
         public override string GetComponentColumnPrefix(FluentNHibernate.Member member)

@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Conventions\CoreAutomappingConfiguration.cs" />
     <Compile Include="Config\Conventions\CustomForeignKeyConvention.cs" />
     <Compile Include="Config\Conventions\DefaultStringLengthConvention.cs" />
     <Compile Include="Config\Conventions\PrimaryKeyConvention.cs" />
@@ -70,6 +71,9 @@
     <Compile Include="Domain\IdBasedEqualityComparer.cs" />
     <Compile Include="Domain\Interface\IHaveId.cs" />
     <Compile Include="Domain\ValueObject.cs" />
+    <Compile Include="Enforce.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="NHibernate\Interface\IRepository.cs" />
     <Compile Include="NHibernate\Repository.cs" />
     <Compile Include="NHibernate\Sql2008SessionFactory.cs" />

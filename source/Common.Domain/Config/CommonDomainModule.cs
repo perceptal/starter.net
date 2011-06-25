@@ -11,13 +11,14 @@ namespace Common.Domain.Config
     public class CommonDomainModule : DomainModule<Member>
     {
         public CommonDomainModule(string application)
-            : base(application, new CommonNHibernateConfiguration())
+            : base(application, new CommonAutomappingConfiguration())
         {
         }
 
         protected override void Load(ContainerBuilder builder)
         {
             RegisterProviders(builder);
+            RegisterServices(builder);
 
             base.Load(builder);
         }
@@ -27,6 +28,13 @@ namespace Common.Domain.Config
             builder.RegisterType<FormsAuthenticationHashProvider>().As<IHashProvider>();
             builder.RegisterType<CryptoSaltProvider>().As<ISaltProvider>();
             builder.RegisterType<AuthenticationPolicyProvider>().As<IAuthenticationPolicyProvider>();
+        }
+
+        private static void RegisterServices(ContainerBuilder builder)
+        {
+            builder.RegisterAssemblyTypes(typeof(Member).Assembly)
+                .Where(t => t.Name.EndsWith("Service"))
+                .AsImplementedInterfaces();
         }
     }
 }
