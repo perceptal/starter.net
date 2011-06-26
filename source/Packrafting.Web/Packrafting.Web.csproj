@@ -85,6 +85,9 @@
     <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -97,10 +100,11 @@
     <Compile Include="Models\Security\RegisterModel.cs" />
     <Compile Include="Models\Security\ChangePasswordModel.cs" />
     <Compile Include="Models\Security\SignOnModel.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="public\css\less.css" />
+    <Content Include="public\css\default.css" />
     <Content Include="public\script\jquery-1.6.1-vsdoc.js" />
     <Content Include="public\script\jquery-1.6.1.js" />
     <Content Include="public\script\jquery-1.6.1.min.js" />
@@ -118,7 +122,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
+    <Content Include="public\css\site.css" />
     <Content Include="public\script\jquery.unobtrusive-ajax.js" />
     <Content Include="public\script\jquery.unobtrusive-ajax.min.js" />
     <Content Include="public\script\jquery.validate.unobtrusive.js" />
@@ -159,7 +163,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="public\css\" />
     <Folder Include="public\images\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

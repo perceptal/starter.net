@@ -2,10 +2,11 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Common.Domain.Config;
-using Core.Config;
 using Autofac;
 using Autofac.Integration.Mvc;
+using Common.Domain.Config;
+using Core.Config;
+using Core.Web.Config;
 
 namespace Packrafting.Web
 {
@@ -22,6 +23,7 @@ namespace Packrafting.Web
 
             builder.RegisterModule(new AutofacWebTypesModule());
             builder.RegisterModule(new CoreModule());
+            builder.RegisterModule(new CoreWebModule());
             builder.RegisterModule(new CommonDomainModule(Application));
 
             var container = builder.Build();

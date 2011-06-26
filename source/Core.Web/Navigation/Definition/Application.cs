@@ -42,7 +42,7 @@ namespace Core.Web
         protected override void SetOptions()
         {
             this.WithOptions(PageOption.NotNavigable.Set(PageOption.Anonymous));
-            this.Application = this.Name;
+            this.Application = this.Id;
         }
 
         public Page Build()

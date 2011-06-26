@@ -18,7 +18,7 @@ namespace Core.Web
 
         protected Navigation(string name, string title, string description)
         {
-            this.Override = this.Name = name;
+            this.Name = this.Id = name;
             this.Title = title;
             this.Description = description;
             this.Index = 0;
@@ -30,13 +30,13 @@ namespace Core.Web
             this.SetOptions();
         }
 
-        protected string Name { get; set; }
+        protected string Id { get; set; }
 
         protected string Title { get; set; }
 
         protected string Description { get; set; }
 
-        protected string Override { get; set; }
+        protected string Name { get; set; }
 
         protected string ParentOverride { get; set; }
 
@@ -59,8 +59,6 @@ namespace Core.Web
         protected List<Param> Parameters { get; set; }
 
         protected List<ClaimBase> Claims { get; set; }
-
-        protected string LegacyUrl { get; set; }
 
         public static implicit operator Page(Navigation builder)
         {
@@ -85,9 +83,9 @@ namespace Core.Web
 
             var built = new Page
             {
-                Name = GetName(builder, builder.Name),
+                Id = GetIdentity(builder, builder.Id),
                 Title = builder.Title,
-                Override = builder.Override,
+                Name = builder.Name,
                 ParentOverride = builder.ParentOverride,
                 Description = builder.Description,
                 Application = GetApplication(builder),
@@ -96,8 +94,8 @@ namespace Core.Web
                 Classifier = builder.Classifier,
                 Condition = builder.Condition,
                 Icon = builder.Icon,
-                Parent = builder.Parent == null ? string.Empty : GetName(builder.Parent, builder.Parent.Name),
-                // Children = children,
+                Parent = builder.Parent == null ? string.Empty : GetIdentity(builder.Parent, builder.Parent.Id),
+                Children = children,
                 Parameters = parameters,
                 Claims = claims,
             };
@@ -116,9 +114,9 @@ namespace Core.Web
             return this;
         }
 
-        private static string GetName(Navigation builder, string name)
+        private static string GetIdentity(Navigation builder, string name)
         {
-            return builder.Parent == null ? name : GetName(builder.Parent, builder.Parent.Name + name);
+            return builder.Parent == null ? name : GetIdentity(builder.Parent, builder.Parent.Id + name);
         }
 
         private static string GetApplication(Navigation builder)
@@ -152,7 +150,7 @@ namespace Core.Web
 
         public Navigation OverrideName(string @override)
         {
-            this.Override = @override;
+            this.Name = @override;
 
             return this;
         }

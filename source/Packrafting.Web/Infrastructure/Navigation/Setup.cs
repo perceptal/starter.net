@@ -4,7 +4,7 @@ namespace Packrafting.Web
 {
     public class Setup
     {
-        public Navigation Define()
+        public Page Define()
         {
             return Application.Named("packrafting", "Packrafting Scotland")
                 .With(Main, Account, Legal, Support);

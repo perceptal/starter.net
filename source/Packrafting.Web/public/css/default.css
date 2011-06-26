@@ -1,0 +1,890 @@
+﻿* {
+    margin:                     0;
+    padding:                    0;
+}
+
+html, body {
+    height:                     100%;
+/*    font-size:                    100%; */
+}
+
+/* Push the footer to the bottom of the page */
+#push {
+    clear:                        both;
+}
+
+/* Body style */
+body {
+    font-size:                    85%;
+    font-family:                  "Lucida Sans Unicode";
+    line-height:                  1.5em;
+    overflow:                     auto;            /* Make sure the scrollbars work correctly */
+    overflow:                     -moz-scrollbars-vertical;
+    overflow-y:                    auto;
+    overflow-x:                    hidden;
+    background:                    #eee;
+}
+
+/* Layout */
+#content {
+    margin:                        1em 0;
+    overflow:                    hidden;
+}
+
+#padder {
+    border-top:                    1px solid #ccc; 
+    border-bottom:                1px solid #ccc; 
+    overflow:                    hidden; 
+    background:                    #fff; 
+    padding-bottom:                2em;
+}
+
+#sidebar {
+    float:                        left;
+    padding:                    1em;
+    margin:                        0;
+    width:                        18%;
+    background:                    #fff;
+    padding-bottom:                9999px;
+    margin-bottom:                -9999px;
+}
+
+#main {
+    float:                        right;
+    width:                        75%;
+    background:                    #fff;
+    margin:                        0;
+    padding:                    1em;
+    padding-bottom:                9999px;
+    margin-bottom:                -9999px;
+}
+
+/* Elements */
+em {
+    font-style:                    normal;
+    color:                        #900;
+}
+
+a {
+    color:                        #900;
+    text-decoration:            none;
+}
+
+a:hover {
+    color:                        #c00;
+}
+
+p {
+    padding:                    0.5em 0.1em;
+    font-size:                    0.9em;
+}
+
+.disabled {
+    cursor:                        default;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family:                Georgia;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    border-bottom:                none;
+}
+
+h1 {
+    font-size:                    1.6em;
+    padding:                    0 0 0.5em 0;
+    color:                        #000;
+    letter-spacing:                -0.05em;
+}
+
+h1 a {
+    font-size:                    1.1em;
+    color:                        #900;
+}
+
+h2 {
+    font-size:                    1.5em;
+    color:                        #000;
+    letter-spacing:                -0.05em;
+    padding-bottom:                1em;
+}
+
+h2 a.selected {
+    text-decoration:            underline;
+}
+
+h2.error {
+    padding-left:               24px;
+    background:                    #fff url(/resource/images/error.png) no-repeat 1px 2px;
+}
+
+h3 {
+    font-size:                    1.4em;
+    color:                        #900;
+    letter-spacing:                -0.05em;
+}
+
+h4 {
+    color:                        #c00;
+    font-size:                    1.3em;
+    margin-bottom:                0.3em;
+}
+
+h5 {
+    font-size:                    1.2em;
+}
+
+h6 {
+    font-size:                    1.1em;
+}
+
+/* Special headings */
+
+
+/* Main heading */
+#header { 
+    width:                        100%; 
+}
+    
+#heading {
+    padding:                    1.5em 0.8em 1.3em 4em;
+    position:                    relative;
+    background:                    #fff url(/resource/images/logo.png) no-repeat 1em 1em;
+}
+
+#heading a, #heading a:hover {
+    font-size:                    2.2em;
+    border-bottom:                none;
+    border-right:                1px solid #ccc;
+    padding-right:                0.5em;
+    margin-right:                0.5em;
+    font-family:                Georgia;
+    color:                        #000;
+    letter-spacing:                -0.05em;
+}
+
+#heading span {
+    font-size:                    1.1em;
+    vertical-align:                top;
+    color:                        #900;
+}
+
+/* Search */
+#search {
+    position:                    absolute;
+    float:                        right;
+    top:                        0;
+    right:                        0;
+    padding:                    1em 0.6em;
+}
+
+#search input {
+    font-size:                    1.2em;
+    padding:                    0.2em 0.2em 0.2em 1.7em;
+    background:                 #eee url(/resource/images/magnifier.png) no-repeat 0.4em 0.4em;
+    border:                        1px solid #ccc;
+    border-right-color:            #ccc;
+    border-bottom-color:        #ccc;
+}
+
+#search input:hover, #search input:focus {
+    border:                        1px solid #000;
+    border-right-color:            #000;
+    border-bottom-color:        #000;
+    background-color:            #eaf8ff;
+}
+
+#search input.searching, #search input.searching:hover, #search input.searching:focus {
+    background:                 #eaf8ff url(/resource/images/spinner.gif) no-repeat 0.4em 0.4em;
+}
+
+/* Spinner */
+#spinner {
+    display:                    none;
+    margin-left:                0.5em;
+    background:                 transparent url(/resource/images/spinner.gif) no-repeat 0 2px;
+}
+
+#spinner span {
+    font-family:                "Lucida Sans Unicode";
+    font-size:                  0.7em;
+    padding-left:               24px;
+}
+
+/* Footer */
+#footer {
+    font-size:                    0.85em;
+    clear:                        both;
+}
+
+#footer-lists {
+    padding:                    1em;
+    border-top:                    1px solid #ccc;
+    border-bottom:                1px solid #ccc;
+    background:                 #fff;
+    overflow:                    hidden;
+    width:                        100%;
+}
+
+#copyright {
+    padding:                    0.3em 1em;
+    clear:                        both;
+    position:                    relative;
+}
+
+.block {
+    float:                        right;
+    margin-left:                1em;
+    padding-left:                1em;
+    max-width:                    12em;
+}
+
+.separator {
+    border-left:                1px solid #ccc;
+}
+
+/* Resize options */
+#resize {
+    position:                    absolute;
+    float:                        right;
+    top:                        0.3em;
+    right:                        1em;
+}
+
+#resize #s {
+    font-size:                    0.95em;
+}
+
+#resize #m {
+    font-size:                    1.25em;
+}
+
+#resize #l {
+    font-size:                    1.5em;
+}
+
+/* Lists */
+
+/* Main menu */
+#header ul.main {
+    font-family:                Georgia;
+    border-bottom:                1px solid #ccc;
+    background:                    #fff;
+    padding:                    0.5em 0.5em 0.8em 0.5em;
+    list-style-type:            none;
+    font-size:                    1.4em;
+    white-space:                nowrap;
+}
+
+#header ul.main li {
+    display:                    inline;
+    padding:                    0.2em 0.7em 0 0;
+}
+
+#header ul.main li a {
+    color:                        #000;
+    padding:                    0 4px;
+}
+
+#header ul.main li a:hover {
+    border-bottom:                none;
+    color:                        #900;
+}
+
+#header ul.main li a.selected {
+    color:                        #900;
+    border:                        1px solid #ccc;
+    background:                    #eee;
+}
+
+#header ul.main li a.disabled, #header ul.main li a.disabled:hover {
+    color:                        #999;
+}
+
+/* Tab list */
+ul.tabs {
+    list-style-type:            none;
+    text-align:                 left;            
+    margin:                     0 0 2em 0;       
+    border-bottom:              1px solid #ccc;  
+    padding:                    0 0 3px 0;  
+}
+
+ul.tabs li {
+    display:                    inline;
+}
+
+ul.tabs li a {
+    color:                        #000;
+    margin:                        0;
+    padding:                    6px; 
+    border:                     1px solid #fff; 
+    background-color:           #fff;
+    color:                      #000;                
+    margin-right:               0.2em; 
+    border-bottom:              none;
+}
+
+ul.tabs li a:hover {
+    color:                      #c00; 
+}
+
+ul.tabs li.ui-tabs-selected {
+    border-bottom:              1px solid #fff; 
+    background-color:           #fff; 
+}
+
+ul.tabs li.ui-tabs-selected a {
+    position:                   relative;
+    color:                        #900;
+    border:                        1px solid #ccc;
+    background:                    #eee;
+    color:                      #900; 
+    padding-top:                5px; 
+}
+
+ul.tabs li a.disabled, ul.tabs li a.disabled:hover {
+    color:                        #999;
+}
+
+ul.tabs li span.index {
+    color:                      #999;
+    font-size:                  0.8em;
+}
+
+.ui-tabs-hide {
+    display:                    none;
+}
+
+/* Hierarchical menu */
+ul.hierarchy, ul.hierarchy li {
+    font-size:                    1.05em;
+    white-space:                nowrap;
+    line-height:                1.6em;
+}
+
+ul.hierarchy li a {
+    padding:                    3px;
+}
+
+ul.hierarchy ul li a {
+    color:                        #999;
+}
+
+ul.hierarchy ul {
+    margin-left:                0.9em;
+    font-size:                    0.85em;
+}
+
+ul.hierarchy a.selected {
+    color:                        #c00;
+    border:                        1px solid #ccc;
+    background:                    #eee;
+}
+
+ul.hierarchy ul a.selected {
+    border:                        0;
+    background:                    transparent;
+}
+
+ul.hierarchy a:hover {
+    color:                        #c00;
+}
+
+ul.hierarchy li a.disabled, ul.hierarchy li a.disabled:hover {
+    color:                        #999;
+}
+
+/* Secure menu */
+#header ul.account {
+    border-bottom:                1px solid #ccc;
+    padding:                    0.1em 1em 0.4em 1em;
+    list-style-type:            none;
+    font-size:                    0.8em;
+    white-space:                nowrap;
+    height:                        2em;
+}
+
+#header ul.account li {
+    display:                    inline;
+    margin:                        0.2em 0;
+    float:                        right;
+}
+
+#header ul.account li a {
+    color:                        #000;
+    padding:                    0 0.75em;
+    border-right:                1px dotted #999;
+}
+
+#header ul.account li a:hover {
+    border-bottom:                none;
+    color:                        #900;
+}
+
+#header ul.account li a.selected {
+    color:                        #900;
+    border-bottom:                none;
+}
+
+#header ul.account li a.first {
+    border-right:                0;
+    padding-right:                0;
+}
+
+#header ul.account li a.disabled, #header ul.account li a.disabled:hover {
+    color:                        #999;
+}
+
+/* Footer lists */
+#footer-lists ul {
+    padding-right:                2em;
+    white-space:                nowrap;
+    float:                        left;
+}
+
+#footer-lists ul li {
+}
+
+#footer-lists ul li a {
+    color:                        #000;
+}
+
+#footer-lists ul li a {
+    border:                        1px solid transparent;
+}
+
+#footer-lists ul li a:hover,  #footer ul li a:hover em {
+    color:                        #900;
+    border-bottom:                none;
+}
+
+#footer-lists ul li a.selected {
+    color:                        #c00;
+}
+
+#footer-lists ul li a.disabled, #footer-lists ul li a.disabled:hover {
+    color:                        #999;
+}
+
+/* Forms */
+label {
+    font-size:                  0.9em;
+}
+
+/* Vertical form */
+.vertical-form input, .vertical-form select, .vertical-form textarea {
+    display:                     block;
+}
+
+.vertical-form label {
+    display:                     block;
+    margin-bottom:                 1em;
+}
+
+/* Margin form */
+.margin-form fieldset {
+    display:                    block;
+    border:                        0;
+    padding:                    0;
+    width:                        100%;
+}
+
+.margin-form fieldset legend {
+    float:                        left;
+    font-size:                  1.2em;
+    font-family:                "Georgia";
+    color:                        #000;
+    padding-bottom:                1em;
+}
+
+.margin-form label {
+    position:                     relative;
+    clear:                         both;
+    float:                         left;
+    display:                     block;
+    width:                         100%;
+    margin-top:                 -1em;
+}
+
+.margin-form label span {
+    color:                        #900;
+    font-size:                    0.8em;
+    display:                    block;
+    margin-top:                 -0.5em;
+}
+
+.margin-form input, .margin-form textarea, .margin-form select {
+    position:                     relative;
+    top:                         -1.55em;
+    left:                         15%;
+    display:                     block;
+}
+
+.margin-form label > label.error {
+    position:                     absolute;
+    top:                         1em;
+    left:                       50%;
+    background:                    #fff;
+    color:                        #000;
+    font-size:                    0.9em;
+    padding:                    0.3em 0.4em;
+    width:                      50%;
+    color:                      #c00;
+}
+
+.margin-form input.submit {
+    clear:                        both;
+    top:                        0.5em;
+}
+
+/* Flash message */
+#message {
+    padding-top:                1em;
+}
+
+#message span {
+    padding:                    0 30px;
+    font-size:                  0.95em;
+}
+
+#message span, #message span.information {
+    background:                    #fff url(/resource/images/information.png) no-repeat 4px center;
+}
+
+#message span.exclamation {
+    color:                        #c00;
+    background:                    #fff url(/resource/images/exclamation.png) no-repeat 4px center;
+}
+
+#message span.error {
+    color:                        #c00;
+    background:                    #fff url(/resource/images/error.png) no-repeat 4px center;
+}
+
+.margin-form #message {
+    position:                     relative;
+    clear:                      both;
+    left:                         15%;
+    padding-bottom:             1em;
+}
+
+#message ul {
+    padding:                    0 26px;
+    font-size:                  0.85em;
+}
+
+#message ul li {
+    color:                      #900;
+    padding:                    0 18px;
+    background:                    #fff url(/resource/images/bullet.png) no-repeat left center;
+}
+
+.filter {
+    margin-bottom:              0.5em;
+}
+
+/* Form Elements */
+input, textarea, select {
+    font-family:                "Lucida Sans Unicode";
+    padding:                    0.3em 0.4em;
+    border:                        1px solid #ccc;
+    border-top-color:            #999;
+    border-left-color:            #999;
+    font-size:                    0.9em;
+}
+
+select {
+    padding: 0;
+}
+
+input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
+    border:                        1px solid #000;
+    background:                    #fff;
+}
+
+input:focus, textarea:focus, select:focus {
+    background:                    #eaf8ff;
+}
+
+input.submit:focus, input.button:focus,
+input.submit:active, input.button:active,
+input.submit:hover, input.button:hover {
+    background:                    #eaf8ff;
+    cursor:                        pointer;
+}
+
+input.disabled, input.disabled:focus, 
+input.disabled:active, input.disabled:hover {
+    color:                      #000;
+    background:                 #ccc;
+    border:                        1px solid #ccc;
+    border-top-color:            #999;
+    border-left-color:            #999;
+}
+
+input.error, textarea.error, select.error {
+    border:                        1px solid #c00;
+}
+
+input.required {
+    background:                    transparent url(/resource/images/required.png) no-repeat top right; 
+}
+
+input.required:focus {
+    background:                    #eaf8ff url(/resource/images/required.png) no-repeat top right;
+}
+
+input.hidden {
+    display:                    none;
+}
+
+/* Buttons */
+input.button, input.submit {
+    border:                     3px double #999;
+    border-top-color:            #ccc;
+    border-left-color:            #ccc;
+    padding:                    0.25em;
+    background-color:           #eee;
+    color:                      #000;
+    font-size:                    0.9em;
+}
+
+input.off, input.off:focus, input.off:active, input.off:hover {
+    background:                 #fff;
+    color:                      #ccc;
+    border:                     3px double #ccc;
+    border-top-color:            #ddd;
+    border-left-color:            #ddd;
+    cursor:                     default;
+}
+
+input.small  {
+    font-size:                  0.8em;
+    padding:                    0.15em;
+}
+
+ul.buttons {
+    position:                   relative;
+    clear:                      both;
+    border:                        1px solid #ccc;
+    border-bottom:                1px solid #ccc;
+    background:                 #eee;
+    margin:                        0.5em 0;
+    padding:                    0.5em 0 1.25em 0;
+    list-style-type:            none;
+    width:                      50%
+}
+
+ul.buttons li {
+    display:                    inline;
+    padding:                    0 0 0 0.5em;
+}
+
+ul.buttons ul 
+{
+    position:                   absolute;
+    top:                        0;
+}
+
+ul.buttons ul.left li {
+}
+
+ul.buttons ul.right {
+    right:                      0;
+    padding:                    0 0.5em 0 0;
+}
+
+ul.buttons li input {
+    display:                    inline;
+    background:                 #fff;
+}
+
+/* hCard */
+.vcard {
+    float:                        right;
+    padding:                    0 2em 0 4em;
+    max-width:                    24em;
+}
+
+.vcard .org {
+    position:                    relative;
+    font-size:                    1.4em;
+    font-family:                Georgia;
+    letter-spacing:             -0.05em;
+}
+
+.vcard .adr {
+    float:                        left;
+}
+
+.vcard .contact {
+    float:                        right;
+}
+
+.vcard .type, .vcard .url {
+    display:                    none;
+}
+
+.vcard img {
+    position:                    absolute;    
+    float:                        right;
+    top:                        0;
+    right:                        0;
+}
+
+.vcard .org a:hover {
+    border-bottom:                none;
+}
+
+/* Tooltip */
+#tooltip {
+    position:                   absolute;
+    z-index:                    3000;
+    border:                     1px solid #333;
+    background-color:           #eaf8ff;
+    padding:                    0.1em 0.3em;
+    opacity:                    0.85;
+}
+
+#tooltip h3  {
+    font-family:                "Lucida Sans Unicode";
+    font-size:                  0.9em;
+    color:                      #000;
+}
+
+#tooltip div { margin: 0; }
+
+/* Grid */
+#grid {
+    padding:                    0;
+    margin:                     0;
+}
+
+#grid caption {
+    padding:                    1em 0;
+    text-align:                 left;
+}
+
+#grid th, #grid td {
+    padding:                    0.4em 0.4em 0.4em 0.8em;
+}
+
+#grid th {
+    font-family:                "Georgia";
+    font-weight:                normal;
+    text-align:                 left;
+}
+
+#grid thead th {
+    color:                      #c00;
+    border:                     1px solid #ccc;
+    border-left:                none;
+    background-color:           #ddd;
+    cursor:                     pointer;
+}
+
+#grid th.headerSortUp { 
+    background:                 #eee url(/resource/images/asc.png) no-repeat right center;
+    padding-right:              1em;
+} 
+
+#grid th.headerSortDown { 
+    background:                 #eee url(/resource/images/desc.png) no-repeat right center; 
+    padding-right:              1em;
+} 
+
+#grid th.nobg {
+    border-top:                 0;
+    border-left:                0;
+    border-right:               1px solid #ccc;
+    background:                 none;
+    margin-right:               0.2em;
+}    
+
+#grid td.empty, #grid th.empty {
+    border:                     0;
+    background:                 none;
+}    
+
+#grid tbody th {
+    border:                     1px solid #ccc;
+    border-top:                 0;
+    font-size:                  1.2em;
+    color:                      #900;
+    background:                 #fff;
+}
+
+#grid tr th.alt, #grid td.alt {
+    background:                 #eee;
+}
+
+#grid td {
+    border-right:               1px solid #ccc;
+    border-bottom:              1px solid #ccc;
+    background:                 #fff;
+    color:                      #000;
+    padding-right:              1em;
+}
+
+#grid tfoot td {
+    background:                 #fff;
+    border:                     none;
+    padding:                    0.5em 0.5em 0 0;
+}
+
+#grid tr th.selected, #grid td.selected {
+    background:                 #ffd;
+    cursor:                     pointer;
+}
+
+#grid tfoot tr th.selected, #grid tfoot td.selected {
+    background:                 #fff;
+    cursor:                     default;
+}
+
+#grid td.actions span {
+    display:                    none;
+}
+
+#grid td.actions a {
+    padding:                    0 3px;
+}
+
+/* Dialog */
+.overlay {
+    background-color:           #000; 
+}
+
+div.dialog {
+    display:                    none;
+    position:                   fixed;
+    top:                        25%;
+    width:                      100%;
+}
+
+div.dialog div.window {
+    height:                     auto;
+    width:                      auto;
+    margin:                     auto;
+    max-width:                  250px;
+    padding:                    2em;
+    background:                 #fff;
+    border:                     1px solid #666;
+}
+
+div.dialog div.message {
+    background:                    #fff url(/resource/images/question.png) no-repeat left center;
+    color:                      #900;
+    font-family:                "Georgia";
+    font-size:                  1.3em;
+    padding-left:               24px;
+    margin-bottom:              1.5em;
+}
+
+div.dialog input.submit {
+    margin-right:               1em;
+    font-size:                  0.95em;
+}

@@ -9,11 +9,12 @@ namespace Core.Web
     {
         public Page()
         {
+            this.Children = new HashSet<Page>();
             this.Parameters = new HashSet<Parameter>();
             this.Claims = new HashSet<Claim>();
         }
 
-        public virtual string Name { get; set; }
+        public virtual string Id { get; set; }
 
         public virtual string Title { get; set; }
 
@@ -33,9 +34,11 @@ namespace Core.Web
 
         public virtual string Classifier { get; set; }
 
-        public virtual string Override { get; set; }
+        public virtual string Name { get; set; }
 
         public virtual string ParentOverride { get; set; }
+
+        public virtual ICollection<Page> Children { get; set; }
 
         public virtual ICollection<Parameter> Parameters { get; set; }
 
@@ -89,7 +92,7 @@ namespace Core.Web
 
         protected IEnumerable<object> Reflect()
         {
-            yield return Name;
+            yield return Id;
             yield return Title;
             yield return Description;
             yield return Application;
@@ -99,7 +102,7 @@ namespace Core.Web
             yield return Icon;
             yield return Condition;
             yield return Classifier;
-            yield return Override;
+            yield return Name;
         }
     }
 }
