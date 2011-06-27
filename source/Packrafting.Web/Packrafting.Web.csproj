@@ -105,6 +105,9 @@
     <Content Include="Global.asax" />
     <Content Include="public\css\less.css" />
     <Content Include="public\css\default.css" />
+    <None Include="public\css\extras.less" />
+    <None Include="public\css\init.less" />
+    <None Include="public\css\main.less" />
     <Content Include="public\script\jquery-1.6.1-vsdoc.js" />
     <Content Include="public\script\jquery-1.6.1.js" />
     <Content Include="public\script\jquery-1.6.1.min.js" />
@@ -122,7 +125,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="public\css\site.css" />
     <Content Include="public\script\jquery.unobtrusive-ajax.js" />
     <Content Include="public\script\jquery.unobtrusive-ajax.min.js" />
     <Content Include="public\script\jquery.validate.unobtrusive.js" />
@@ -144,6 +146,7 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <None Include="public\css\screen.less" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Domain\Common.Domain.csproj">
