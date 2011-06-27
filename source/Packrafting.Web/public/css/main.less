@@ -129,35 +129,33 @@ nav#main {
     .col(9);
     
     ul {
-        list-style-type: none;
-        font-size: 1.2em;
-        white-space: nowrap;
-        
-        li {
-            display: inline;
-            
-            a {
-                .rounded(13px);
+        border-bottom: 4px solid #E1E1E1;
+		font-size: 20px;
+		margin: 0 0 20px;
+		padding: 0;
 
-                background-color: #eee;
-                color: #960 !important;
-                font-size: 1.1em;
-                -moz-box-orient: vertical;
-                display: inline-block;
-                display: -moz-inline-box;
-                vertical-align: middle;
-                line-height: 28px;
-                padding: 0 11px;
-            }
+		
+		li.selected, li:hover {
+            border-bottom-color: #9C3; 
+			
+			a { color: black; }  
+        }
+
+        li {
+            border-bottom: 4px solid #E1E1E1;
+			float: left;
+			list-style: none;
+			margin: 0 24px -4px 0;
+			padding: 0;
+			position: relative;	
             
-            a:hover {
-                background-color: #E1DDD5;
-            }
-            
-            a.selected {
-                color: #900;
-                background: #eee;
-            }
+			a {
+                border-left: 2px solid #eee;
+				border-right: 2px solid #eee;
+				color: #574D37;
+				padding-left: 0;
+				padding-right: 0;
+			}
         }
     }
 }
