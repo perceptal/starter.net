@@ -45,14 +45,27 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Base\ControllerBase.cs" />
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Config\CoreWebModule.cs" />
     <Compile Include="Config\Interface\IConfigManager.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Model\HeadingModel.cs" />
+    <Compile Include="Model\LinkOption.cs" />
+    <Compile Include="Model\MessageModel.cs" />
+    <Compile Include="Model\NavigationModel.cs" />
+    <Compile Include="Model\ViewModelBase.cs" />
     <Compile Include="Navigation\Definition\Action.cs" />
     <Compile Include="Navigation\Definition\Application.cs" />
     <Compile Include="Navigation\Definition\Area.cs" />
@@ -65,6 +78,7 @@
     <Compile Include="Navigation\Definition\Param.cs" />
     <Compile Include="Navigation\Definition\Claim\Reader.cs" />
     <Compile Include="Navigation\Model\Page.cs" />
+    <Compile Include="Navigation\Model\PageExtensions.cs" />
     <Compile Include="Navigation\Model\PageOption.cs" />
     <Compile Include="Navigation\Model\Parameter.cs" />
     <Compile Include="Security\Interface\ISecurityManager.cs" />
@@ -84,7 +98,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Routing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

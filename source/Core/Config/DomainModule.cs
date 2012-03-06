@@ -21,7 +21,7 @@ namespace Core.Config
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterInstance<ISessionFactory>(
-                new Sql2008SessionFactory().Build<T>(this.Application, this.AutomappingConfiguration))
+                new Sql2005SessionFactory().Build<T>(this.Application, this.AutomappingConfiguration))
                     .SingleInstance();
 
             builder.RegisterType<TransactionTracker>()

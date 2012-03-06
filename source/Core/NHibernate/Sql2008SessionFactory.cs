@@ -9,13 +9,13 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace Core.Persistence.Implementation
 {
-    public class Sql2008SessionFactory
+    public class Sql2005SessionFactory
     {
         public ISessionFactory Build<T>(string application, DefaultAutomappingConfiguration config)
         {
             var factory = Fluently.Configure()
 
-                .Database(MsSqlConfiguration.MsSql2005.ConnectionString(c => c.FromConnectionStringWithKey(application)))
+                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey(application)))
 
                 .Mappings(m => m.AutoMappings.Add(AutoMap.AssemblyOf<T>(config)
                                     .UseOverridesFromAssemblyOf<T>()
