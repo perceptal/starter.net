@@ -5,15 +5,16 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Core.Web.Config;
 using Core.Web.Security;
+using web = System.Web.Mvc;
 
 namespace Core.Web
 {
-    public abstract class ControllerBase : System.Web.Mvc.Controller
+    public abstract class PlatformController : web.Controller
     {
-        private const string AjaxMaster = "/Layouts/_Ajax";
-        private const string DefaultMaster = "/Layouts/_Layout";
+        private const string AjaxMaster = "/Layouts/_Remote";
+        private const string DefaultMaster = "/Layouts/_Application";
 
-        protected ControllerBase(ISecurityManager security, IConfigManager config)
+        protected PlatformController(ISecurityManager security, IConfigManager config)
         {
             this.Security = security;
             this.Config = config;
@@ -178,11 +179,11 @@ namespace Core.Web
 
         public virtual T GetModel<T>(T model) where T : ViewModelBase
         {
-            return model;
+            return model
                 //.WithIdentity(this.Principal.Identity, this.Security.ListClaimsForUser())
                 //.WithRoute(this.ControllerName, this.ActionName)
                 //.WithAuthenticateLink(GetAuthenticateLink())
-                //.WithNavigation(pageNavigationModel) as T;
+                .WithNavigation(this.Config.Navigation) as T;
         }
 
         private Page GetAuthenticateLink()

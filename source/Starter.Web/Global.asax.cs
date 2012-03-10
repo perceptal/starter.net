@@ -7,7 +7,7 @@ namespace Starter.Web
     {
         protected void Application_Start()
         {
-            var container = new Bootstrapper().Bootstrap();    
+            var container = new Bootstrapper().Bootstrap("starter");    
         }
     }
 }

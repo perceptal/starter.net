@@ -1,16 +1,16 @@
 ﻿using System.Web.Mvc;
 using Common.Domain;
+using Core.Web;
+using Core.Web.Security;
+using Core.Web.Config;
 
 namespace Starter.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : PlatformController
     {
-        public HomeController(IMembershipService service)
+        public HomeController(ISecurityManager security, IConfigManager config) : base(security, config)
         {
-            this.Service = service;
         }
-
-        private IMembershipService Service { get; set; }
 
         public ActionResult Index()
         {
@@ -20,9 +20,11 @@ namespace Starter.Web.Controllers
 
             // this.Service.Register(member);
 
+            var model = base.GetModel();
+
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-            return View();
+            return View(model);
         }
 
         public ActionResult About()

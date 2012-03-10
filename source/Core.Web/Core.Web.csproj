@@ -56,11 +56,15 @@
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Base\ControllerBase.cs" />
+    <Compile Include="Infrastructure\BootstrapperBase.cs" />
+    <Compile Include="Base\PlatformController.cs" />
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Config\CoreWebModule.cs" />
     <Compile Include="Config\Interface\IConfigManager.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Infrastructure\IFilterRegistrar.cs" />
+    <Compile Include="Infrastructure\INavigationDefinition.cs" />
+    <Compile Include="Infrastructure\IRouteConfiguration.cs" />
     <Compile Include="Model\HeadingModel.cs" />
     <Compile Include="Model\LinkOption.cs" />
     <Compile Include="Model\MessageModel.cs" />

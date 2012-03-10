@@ -24,7 +24,7 @@ namespace Core.Web
         /// <summary>
         /// Navigation hierarchy
         /// </summary>
-        public Navigation Navigation { get; protected set; }
+        public Page Navigation { get; protected set; }
 
         /// <summary>
         /// True if the view model has been initialised
@@ -222,7 +222,7 @@ namespace Core.Web
         /// <summary>
         /// Used to initialise the navigation information
         /// </summary>
-        public ViewModelBase WithNavigation(Navigation navigation)
+        public ViewModelBase WithNavigation(Page navigation)
         {
             this.Navigation = navigation;
 

@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Core.Web;
 
 namespace Starter.Web
 {
-    public class RouteConfigurator
+    public class RouteConfigurator : IRouteConfiguration
     {
-        public RouteConfigurator(RouteCollection routes)
-        {
-            this.Routes = routes;
-        }
-
         public RouteCollection Routes { get; set; }
 
-        public void Configure()
+        public void Configure(RouteCollection routes)
         {
+            this.Routes = routes;
+
             this.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             ConfigureDefaultRoute();
         }

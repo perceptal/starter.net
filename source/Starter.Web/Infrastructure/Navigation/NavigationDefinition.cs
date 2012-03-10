@@ -2,15 +2,15 @@
 
 namespace Starter.Web
 {
-    public static class NavigationDefinition
+    public class NavigationDefinition : INavigationDefinition
     {
-        public static Page Get()
+        public Page Get()
         {
             return Application.Named("starter", "Starter App")
                 .With(Main, Account, Legal, Support);
         }
         
-        private static Navigation Main
+        private Navigation Main
         {
             get 
             { 
@@ -18,7 +18,7 @@ namespace Starter.Web
             }
         }
 
-        private static Navigation Account
+        private Navigation Account
         {
             get
             {
@@ -32,7 +32,7 @@ namespace Starter.Web
             }
         }
 
-        private static Navigation Legal
+        private Navigation Legal
         {
             get
             {
@@ -45,7 +45,7 @@ namespace Starter.Web
             }
         }
 
-        private static Navigation Support
+        private Navigation Support
         {
             get
             {
@@ -61,17 +61,17 @@ namespace Starter.Web
             }
         }
 
-        private static Navigation Home
+        private Navigation Home
         {
             get { return Controller.Named("home").Default().With(Action.Named("index")); }
         }
 
-        private static Navigation Members
+        private Navigation Members
         {
             get { return Area.Named("members"); }
         }
 
-        private static Navigation Administration
+        private Navigation Administration
         {
             get
             {
@@ -80,7 +80,7 @@ namespace Starter.Web
             }
         }
 
-        private static Navigation Users
+        private Navigation Users
         {
             get
             {
@@ -110,7 +110,7 @@ namespace Starter.Web
             }
         }
 
-        private static Navigation Roles
+        private Navigation Roles
         {
             get
             {
@@ -127,7 +127,7 @@ namespace Starter.Web
             }
         }
 
-        private static Navigation Groups
+        private Navigation Groups
         {
             get
             {
