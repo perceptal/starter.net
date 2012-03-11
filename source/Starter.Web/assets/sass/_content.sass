@@ -1,0 +1,81 @@
+﻿@import "compass"
+@import "compass/css3/box-shadow"
+@import "compass/css3/box-sizing"
+@import "compass/css3/opacity"
+@import "compass/utilities/general/clearfix"
+
+=shadow($val)
+	+box-shadow(rgba(0, 0, 0, $val) 0 0 1px, rgba(0, 0, 0, $val) 0 1px 1px)
+
+=article
+	+border-radius(3px)
+	+box-sizing(border-box)
+	position: relative
+	margin-bottom: 10px
+	border: 1px solid transparent
+	
+	div.info
+		padding: 10px 60px
+	div.no-photo
+		padding-left: 0
+	img
+		+border-radius(6px)
+		border-color: transparent
+		position: absolute
+		top: 5px
+		left: 5px
+	div.heading
+		margin-bottom: 5px
+	div.detail
+		font-size: 0.9em
+	a
+		color: #333
+		text-decoration: none
+	a:hover
+		color: #c00
+	strong
+		color: #006
+		padding-right: 10px
+		font-weight: normal
+	em
+		background-color: #ffc
+		border: 1px solid #c96
+	span
+		margin-right: 10px
+	span.info
+		color: #c00
+		font-size: 0.9em
+	ul
+		position: absolute
+		top: 20px
+		right: 10px
+		display: none
+		font-size: 0.9em
+		li
+			display: inline
+			padding-left: 5px
+			border-left: 1px solid #ddd
+		li:nth-child(1)
+			border-left-color: transparent
+		a
+			color: #900
+
+article.item
+	+article
+
+	border: 1px solid #ddd
+	background: #ffe
+
+article.list
+	+article
+	+opacity(0.7)
+
+article.list:hover
+	border: 1px solid #ddd
+	background: #ffe
+	cursor: pointer
+	+opacity(1)
+
+	ul
+		display: inline
+	

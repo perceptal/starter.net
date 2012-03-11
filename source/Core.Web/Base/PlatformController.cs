@@ -11,8 +11,8 @@ namespace Core.Web
 {
     public abstract class PlatformController : web.Controller
     {
-        private const string AjaxMaster = "/Layouts/_Remote";
-        private const string DefaultMaster = "/Layouts/_Application";
+        private const string AjaxMaster = "Remote";
+        private const string DefaultMaster = "Application";
 
         protected PlatformController(ISecurityManager security, IConfigManager config)
         {
@@ -181,7 +181,7 @@ namespace Core.Web
         {
             return model
                 //.WithIdentity(this.Principal.Identity, this.Security.ListClaimsForUser())
-                //.WithRoute(this.ControllerName, this.ActionName)
+                .WithRoute(this.ControllerName, this.ActionName)
                 //.WithAuthenticateLink(GetAuthenticateLink())
                 .WithNavigation(this.Config.Navigation) as T;
         }

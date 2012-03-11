@@ -1,0 +1,818 @@
+/* line 17, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/compass-0.12.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/main.sass */
+body, input, select {
+  font-family: "Lucida Grande", "Lucida Sans Unicode";
+}
+
+/* line 6, ../sass/main.sass */
+a {
+  text-decoration: none;
+  color: #990000;
+}
+
+/* line 10, ../sass/main.sass */
+a:hover {
+  text-decoration: none;
+  color: #cc0000;
+}
+
+/* line 13, ../sass/_layout.sass */
+body, body.home, body.user {
+  background: #eeeeff;
+}
+
+/* line 15, ../sass/_layout.sass */
+body.users {
+  background: #e6ffe6;
+}
+
+/* line 17, ../sass/_layout.sass */
+body.organisations {
+  background: #eeeeff;
+}
+
+/* line 20, ../sass/_layout.sass */
+#container {
+  width: 950px;
+  margin: 0 auto;
+  padding: 0;
+  clear: both;
+}
+
+/* line 26, ../sass/_layout.sass */
+header {
+  width: 100%;
+  height: 36px;
+  margin: 20px 0 10px 0;
+  padding: 0;
+}
+/* line 32, ../sass/_layout.sass */
+header h2 {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  font-family: "Georgia";
+  font-size: 20px;
+  background: transparent url("/assets/images/logo.png") no-repeat 0 0;
+  height: 36px;
+  padding: 2px 20px 0 34px;
+}
+
+/* line 41, ../sass/_layout.sass */
+div#main {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  background: white;
+  width: 700px;
+  min-height: 400px;
+  margin: 0 0 20px 0;
+  padding: 10px;
+}
+
+/* line 52, ../sass/_layout.sass */
+.content {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 54, ../sass/_layout.sass */
+.content nav {
+  float: left;
+}
+/* line 57, ../sass/_layout.sass */
+.content section {
+  float: left;
+  padding: 10px;
+  min-height: 400px;
+  border-left: 1px solid #dddddd;
+}
+
+/* line 63, ../sass/_layout.sass */
+footer {
+  margin: 10px;
+  font-size: 0.9em;
+}
+
+/* line 67, ../sass/_layout.sass */
+aside#sidebar {
+  position: fixed;
+  left: 900px;
+  top: 20px;
+  width: 250px;
+  padding: 0;
+}
+
+/* line 23, ../sass/_navigation.sass */
+nav#security ul {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+/* line 26, ../sass/_navigation.sass */
+nav#security ul a {
+  color: #777777;
+  padding: 4px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 28, ../sass/_navigation.sass */
+nav#security ul a:hover {
+  color: #333333;
+}
+
+/* line 31, ../sass/_navigation.sass */
+nav#main {
+  display: inline;
+}
+/* line 34, ../sass/_navigation.sass */
+nav#main a {
+  color: #777777;
+  padding: 4px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 36, ../sass/_navigation.sass */
+nav#main a:hover {
+  color: #990000;
+}
+/* line 39, ../sass/_navigation.sass */
+nav#main ul, nav#main li {
+  display: inline;
+}
+/* line 41, ../sass/_navigation.sass */
+nav#main li {
+  padding-right: 10px;
+}
+/* line 43, ../sass/_navigation.sass */
+nav#main ul {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 47, ../sass/_navigation.sass */
+nav#user a {
+  color: #777777;
+  padding: 4px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 49, ../sass/_navigation.sass */
+nav#user a:hover {
+  color: #990000;
+}
+/* line 52, ../sass/_navigation.sass */
+nav#user ul {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+/* line 55, ../sass/_navigation.sass */
+nav#user ul li {
+  margin-top: 15px;
+}
+/* line 57, ../sass/_navigation.sass */
+nav#user ul li.loading {
+  display: none;
+  padding-left: 26px;
+  color: #330000;
+  background: transparent url("loading.gif") no-repeat 4px center;
+}
+
+/* line 71, ../sass/_navigation.sass */
+nav ul.home li.home a,
+nav ul.settings li.settings a,
+nav ul.profile li.profile a,
+nav ul.password li.password a,
+nav ul.users li.users a,
+nav ul.organisations li.organisations a,
+nav ul.sessions li.sessions a {
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  color: #cc0000 !important;
+  background: #eeeeee;
+}
+
+/* line 74, ../sass/_navigation.sass */
+nav.side {
+  padding: 5px 0 10px 10px;
+  text-align: right;
+  height: 100%;
+  font-size: 0.8em;
+}
+/* line 80, ../sass/_navigation.sass */
+nav.side ul.pages, nav.side ul.actions {
+  margin-bottom: 20px;
+}
+/* line 83, ../sass/_navigation.sass */
+nav.side li {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -o-border-top-left-radius: 3px;
+  -ms-border-top-left-radius: 3px;
+  -khtml-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -o-border-bottom-left-radius: 3px;
+  -ms-border-bottom-left-radius: 3px;
+  -khtml-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: 1px solid transparent;
+  border-right: none;
+  margin-bottom: 5px;
+  padding: 8px;
+}
+/* line 89, ../sass/_navigation.sass */
+nav.side li.active {
+  background: #eeeeee;
+  border-color: #dddddd;
+}
+/* line 92, ../sass/_navigation.sass */
+nav.side a {
+  color: #333333;
+  padding-right: 5px;
+}
+/* line 95, ../sass/_navigation.sass */
+nav.side a:hover {
+  color: #cc0000;
+}
+/* line 97, ../sass/_navigation.sass */
+nav.side a.active {
+  color: #990000;
+}
+
+/* line 100, ../sass/_navigation.sass */
+nav.secondary {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  background: #eeeeee;
+  border: 1px solid #dddddd;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 6px 0;
+}
+/* line 108, ../sass/_navigation.sass */
+nav.secondary a {
+  color: #777777;
+  padding: 4px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 16px;
+}
+/* line 112, ../sass/_navigation.sass */
+nav.secondary a:hover {
+  color: #990000;
+}
+/* line 114, ../sass/_navigation.sass */
+nav.secondary a.active {
+  color: #cc0000;
+}
+/* line 116, ../sass/_navigation.sass */
+nav.secondary a.active:after {
+  content: " \2192";
+}
+/* line 119, ../sass/_navigation.sass */
+nav.secondary ul, nav.secondary li {
+  display: inline;
+}
+/* line 121, ../sass/_navigation.sass */
+nav.secondary li {
+  padding-left: 10px;
+}
+/* line 123, ../sass/_navigation.sass */
+nav.secondary ul {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 126, ../sass/_navigation.sass */
+nav.secondary input.search {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 1px, rgba(0, 0, 0, 0.1) 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 1px, rgba(0, 0, 0, 0.1) 0 1px 1px;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 0 1px, rgba(0, 0, 0, 0.1) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 1px, rgba(0, 0, 0, 0.1) 0 1px 1px;
+  outline: none;
+  font-size: 1em;
+  border: 0;
+  background: white url("/assets/images/magnifier.png") no-repeat 8px center;
+  font-weight: normal;
+  padding: 2px 10px 3px 30px;
+  width: 250px;
+}
+/* line 139, ../sass/_navigation.sass */
+nav.secondary input:focus, nav.secondary input:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  color: #000066;
+}
+/* line 143, ../sass/_navigation.sass */
+nav.secondary input.searching {
+  background: white url("/assets/images/loading.gif") no-repeat 8px center;
+}
+
+/* line 63, ../sass/_content.sass */
+article.item {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border: 1px solid #dddddd;
+  background: #ffffee;
+}
+/* line 17, ../sass/_content.sass */
+article.item div.info {
+  padding: 10px 60px;
+}
+/* line 19, ../sass/_content.sass */
+article.item div.no-photo {
+  padding-left: 0;
+}
+/* line 21, ../sass/_content.sass */
+article.item img {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  border-color: transparent;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+/* line 27, ../sass/_content.sass */
+article.item div.heading {
+  margin-bottom: 5px;
+}
+/* line 29, ../sass/_content.sass */
+article.item div.detail {
+  font-size: 0.9em;
+}
+/* line 31, ../sass/_content.sass */
+article.item a {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 34, ../sass/_content.sass */
+article.item a:hover {
+  color: #cc0000;
+}
+/* line 36, ../sass/_content.sass */
+article.item strong {
+  color: #000066;
+  padding-right: 10px;
+  font-weight: normal;
+}
+/* line 40, ../sass/_content.sass */
+article.item em {
+  background-color: #ffffcc;
+  border: 1px solid #cc9966;
+}
+/* line 43, ../sass/_content.sass */
+article.item span {
+  margin-right: 10px;
+}
+/* line 45, ../sass/_content.sass */
+article.item span.info {
+  color: #cc0000;
+  font-size: 0.9em;
+}
+/* line 48, ../sass/_content.sass */
+article.item ul {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: none;
+  font-size: 0.9em;
+}
+/* line 54, ../sass/_content.sass */
+article.item ul li {
+  display: inline;
+  padding-left: 5px;
+  border-left: 1px solid #dddddd;
+}
+/* line 58, ../sass/_content.sass */
+article.item ul li:nth-child(1) {
+  border-left-color: transparent;
+}
+/* line 60, ../sass/_content.sass */
+article.item ul a {
+  color: #990000;
+}
+
+/* line 69, ../sass/_content.sass */
+article.list {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 17, ../sass/_content.sass */
+article.list div.info {
+  padding: 10px 60px;
+}
+/* line 19, ../sass/_content.sass */
+article.list div.no-photo {
+  padding-left: 0;
+}
+/* line 21, ../sass/_content.sass */
+article.list img {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  border-color: transparent;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+/* line 27, ../sass/_content.sass */
+article.list div.heading {
+  margin-bottom: 5px;
+}
+/* line 29, ../sass/_content.sass */
+article.list div.detail {
+  font-size: 0.9em;
+}
+/* line 31, ../sass/_content.sass */
+article.list a {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 34, ../sass/_content.sass */
+article.list a:hover {
+  color: #cc0000;
+}
+/* line 36, ../sass/_content.sass */
+article.list strong {
+  color: #000066;
+  padding-right: 10px;
+  font-weight: normal;
+}
+/* line 40, ../sass/_content.sass */
+article.list em {
+  background-color: #ffffcc;
+  border: 1px solid #cc9966;
+}
+/* line 43, ../sass/_content.sass */
+article.list span {
+  margin-right: 10px;
+}
+/* line 45, ../sass/_content.sass */
+article.list span.info {
+  color: #cc0000;
+  font-size: 0.9em;
+}
+/* line 48, ../sass/_content.sass */
+article.list ul {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: none;
+  font-size: 0.9em;
+}
+/* line 54, ../sass/_content.sass */
+article.list ul li {
+  display: inline;
+  padding-left: 5px;
+  border-left: 1px solid #dddddd;
+}
+/* line 58, ../sass/_content.sass */
+article.list ul li:nth-child(1) {
+  border-left-color: transparent;
+}
+/* line 60, ../sass/_content.sass */
+article.list ul a {
+  color: #990000;
+}
+
+/* line 73, ../sass/_content.sass */
+article.list:hover {
+  border: 1px solid #dddddd;
+  background: #ffffee;
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 79, ../sass/_content.sass */
+article.list:hover ul {
+  display: inline;
+}
+
+/* line 10, ../sass/_dialog.sass */
+#dialog, #confirm {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 1px, rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 1px, rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 0 1px, rgba(0, 0, 0, 0.3) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 1px, rgba(0, 0, 0, 0.3) 0 1px 1px;
+  position: absolute;
+  display: none;
+  z-index: 999999;
+  top: 20%;
+  left: 30%;
+  background: #eeeeee;
+  padding: 20px;
+}
+/* line 21, ../sass/_dialog.sass */
+#dialog .message, #confirm .message {
+  position: relative;
+  display: none;
+  padding: 0 10px 0 26px;
+  margin: 4px;
+  font-size: 0.9em;
+}
+/* line 28, ../sass/_dialog.sass */
+#dialog a, #confirm a {
+  color: #990000;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 999999;
+}
+/* line 34, ../sass/_dialog.sass */
+#dialog a.close, #confirm a.close {
+  font-size: 0.8em;
+}
+/* line 37, ../sass/_dialog.sass */
+#dialog a.yes, #dialog a.no, #confirm a.yes, #confirm a.no {
+  padding-left: 10px;
+}
+/* line 40, ../sass/_dialog.sass */
+#dialog a.no, #confirm a.no {
+  color: #777777;
+}
+/* line 43, ../sass/_dialog.sass */
+#dialog a.close:hover, #dialog a.yes:hover, #confirm a.close:hover, #confirm a.yes:hover {
+  color: #cc0000;
+}
+/* line 46, ../sass/_dialog.sass */
+#dialog a.no:hover, #confirm a.no:hover {
+  color: black;
+}
+/* line 49, ../sass/_dialog.sass */
+#dialog .questions, #confirm .questions {
+  font-size: 0.9em;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* line 54, ../sass/_dialog.sass */
+.message.info {
+  background: transparent url("/assets/images/info.png") no-repeat 1px 1px;
+  color: #000066;
+}
+
+/* line 57, ../sass/_dialog.sass */
+.message.warning {
+  background: transparent url("/assets/images/warning.png") no-repeat 1px 1px;
+  color: #330000;
+}
+
+/* line 60, ../sass/_dialog.sass */
+.message.error {
+  background: transparent url("/assets/images/error.png") no-repeat 1px 1px;
+  color: #990000;
+}
+
+/* line 63, ../sass/_dialog.sass */
+.message.question {
+  background: transparent url("/assets/images/question.png") no-repeat 1px 1px;
+  color: #000066;
+}
+
+/* line 66, ../sass/_dialog.sass */
+.message.loading {
+  background: transparent url("/assets/images/loading.gif") no-repeat 1px 1px;
+  color: #330000;
+}
+
+/* Reveal dialog */
+/* line 72, ../sass/_dialog.sass */
+.reveal-modal-bg {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
+  opacity: 0.15;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: black;
+  z-index: 100;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+/* line 83, ../sass/_dialog.sass */
+.reveal-modal {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  top: 100px;
+  left: 50%;
+  margin-left: -300px;
+  width: 520px;
+  background: #eeeeee;
+  position: absolute;
+  z-index: 101;
+  padding: 6px 6px 2px 6px;
+}
+
+/* line 96, ../sass/_dialog.sass */
+.reveal-modal.small {
+  width: 200px;
+  margin-left: -140px;
+}
+
+/* line 99, ../sass/_dialog.sass */
+.reveal-modal.medium {
+  width: 400px;
+  margin-left: -240px;
+}
+
+/* line 102, ../sass/_dialog.sass */
+.reveal-modal.large {
+  width: 600px;
+  margin-left: -340px;
+}
+
+/* line 105, ../sass/_dialog.sass */
+.reveal-modal.xlarge {
+  width: 800px;
+  margin-left: -440px;
+}
+
+/* line 110, ../sass/_dialog.sass */
+.reveal-modal .close-reveal-modal {
+  text-shadow: 0 0 2px black;
+  font-size: 14px;
+  line-height: 0.5;
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 122, ../sass/_dialog.sass */
+.reveal-modal .close-reveal-modal:hover {
+  text-shadow: 0 0 0 #cc0000;
+  color: #cc0000;
+}
+/* line 126, ../sass/_dialog.sass */
+.reveal-modal img {
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -o-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -khtml-border-radius: 7px;
+  border-radius: 7px;
+  width: 100%;
+}

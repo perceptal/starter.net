@@ -22,13 +22,10 @@ namespace Starter.Web
         {
             get
             {
-                return Controller.Named("account").NotNavigable()
+                return Controller.Named("sessions").NotNavigable()
                     .With(
                         Action.Named("signon", "Sign On").System().Anonymous().Hidden(),
-                        Action.Named("signout", "Sign Out").System().Anonymous().Hidden(),
-                        Action.Named("recover", "Forgot your Password?").System().Anonymous().Hidden(),
-                        Action.Named("profile", "Your Account").System().Default(),
-                        Action.Named("password", "Change Password").System());
+                        Action.Named("signout", "Sign Out").System().Hidden());
             }
         }
 
@@ -63,7 +60,15 @@ namespace Starter.Web
 
         private Navigation Home
         {
-            get { return Controller.Named("home").Default().With(Action.Named("index")); }
+            get 
+            { 
+                return Controller.Named("home").Default()
+                    .With(
+                        Action.Named("index"),
+                        Action.Named("about"),
+                        Action.Named("contact")
+                        ); 
+            }
         }
 
         private Navigation Members

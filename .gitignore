@@ -13,3 +13,4 @@ _ReSharper.*/
 *.InstallLog
 VERSION
 *.nupkg
+.sass-cache/

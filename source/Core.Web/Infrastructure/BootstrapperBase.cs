@@ -19,6 +19,7 @@ namespace Core.Web
             this.Assembly = assembly;
             this.RouteConfigurator = route;
             this.FilterRegistrar = filter;
+
             this.Navigation = navigation.Get();
         }
 
@@ -30,6 +31,8 @@ namespace Core.Web
         public IContainer Bootstrap(string application)
         {
             AreaRegistration.RegisterAllAreas();
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new PlatformViewEngine());
 
             var builder = new ContainerBuilder();
             builder.RegisterControllers(this.Assembly);

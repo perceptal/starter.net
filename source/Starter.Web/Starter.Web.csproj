@@ -116,6 +116,10 @@
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <None Include="assets\sass\_navigation.sass" />
+    <None Include="assets\sass\_layout.sass" />
+    <None Include="assets\sass\_dialog.sass" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -128,9 +132,34 @@
     <Compile Include="Models\Security\RegisterModel.cs" />
     <Compile Include="Models\Security\ChangePasswordModel.cs" />
     <Compile Include="Models\Security\SignOnModel.cs" />
+    <Content Include="Views\Shared\Dialog.cshtml" />
+    <Content Include="Views\Shared\Confirm.cshtml" />
+    <Content Include="Views\Users\Menu.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\date.png" />
+    <Content Include="assets\images\date_on.png" />
+    <Content Include="assets\images\error.png" />
+    <Content Include="assets\images\false.png" />
     <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\grippie.png" />
+    <Content Include="assets\images\group.png" />
+    <Content Include="assets\images\image.png" />
+    <Content Include="assets\images\info.png" />
+    <Content Include="assets\images\loading.gif" />
+    <Content Include="assets\images\lock.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\magnifier.png" />
+    <Content Include="assets\images\noprofile.png" />
+    <Content Include="assets\images\question.png" />
+    <Content Include="assets\images\required.png" />
+    <Content Include="assets\images\select.png" />
+    <Content Include="assets\images\select_on.png" />
+    <Content Include="assets\images\true.png" />
+    <Content Include="assets\images\typeahead.png" />
+    <Content Include="assets\images\user.png" />
+    <Content Include="assets\images\warning.png" />
     <Content Include="assets\vendor\script\customfileinput.js" />
     <Content Include="assets\vendor\script\datepicker.js" />
     <Content Include="assets\vendor\script\highlight.regex.js" />
@@ -149,7 +178,6 @@
     <Content Include="assets\vendor\script\jquery.validate.js" />
     <Content Include="assets\vendor\script\jquery.validate.min.js" />
     <Content Include="assets\vendor\script\modernizr-2.0.6-development-only.js" />
-    <Content Include="assets\vendor\css\reset.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -158,10 +186,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Sessions\ChangePassword.cshtml" />
-    <Content Include="Views\Sessions\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Sessions\SignOn.cshtml" />
-    <Content Include="Views\Sessions\Register.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Layouts\Application.cshtml" />
@@ -185,19 +210,27 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\css\" />
     <Folder Include="assets\script\" />
+    <Folder Include="assets\vendor\css\" />
+    <Folder Include="Views\Administration\Locations\" />
+    <Folder Include="Views\Administration\Organisations\" />
+    <Folder Include="Views\Administration\Permissions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Layouts\Remote.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\css\main.sass" />
+    <None Include="assets\config.rb" />
+    <None Include="assets\sass\main.sass" />
     <None Include="assets\vendor\script\application.combine" />
     <Content Include="Views\Shared\Header.cshtml" />
-    <Content Include="Views\Sessions\Links.cshtml" />
-    <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\Sessions\Menu.cshtml" />
+    <Content Include="Views\Users\Search.cshtml" />
     <Content Include="Views\Shared\Menu.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Sidebar.cshtml" />
+    <Content Include="Views\User\Menu.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

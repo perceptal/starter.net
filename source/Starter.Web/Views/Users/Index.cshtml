@@ -1,0 +1,30 @@
+﻿@{ Html.RenderPartial("Users/Menu"); }
+
+<article class="user item">
+    <img src="/assets/images/noprofile.png" />
+
+    <div class="info">
+        <div class="heading">
+            <strong>Johnny Hall</strong>
+            <span class="info">Developer</span>
+        </div>
+
+        <div class="detail">
+            <span class="phone">07971 880871</span>
+            <span class="email"><a href="mailto:johnny@recipher.co.uk">johnny@recipher.co.uk</a></span>
+        </div>
+    </div>
+            
+    <ul>
+        <li><a href="/">lock</a></li>
+        <li><a href="/">open</a></li>
+    </ul>
+</article>
+
+<div class="content">
+    @{ Html.RenderPartial("Users/Actions"); }
+
+    <section>
+        Form
+    </section>
+</div>
