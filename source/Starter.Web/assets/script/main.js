@@ -17,6 +17,6 @@
     urlArgs: 'bust=' + (new Date()).getTime()
 });
 
-require(["domready", "cs!app"], function (domready, app) {
+require(["domready", "app"], function (domready, app) {
     domready(function () { app.initialize(); });
 });

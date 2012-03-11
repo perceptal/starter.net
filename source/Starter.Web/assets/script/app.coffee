@@ -1,5 +1,7 @@
-﻿define(["jquery"], ($) ->
+﻿define(["jquery", "menu"], ($, menu) ->
 
-  initialize: ->
-    alert $("body").data("controller")
+	return {
+		initialize: ->
+			menu.click "nav a"
+	}
 )
