@@ -120,6 +120,7 @@
     <None Include="assets\sass\_navigation.sass" />
     <None Include="assets\sass\_layout.sass" />
     <None Include="assets\sass\_dialog.sass" />
+    <None Include="assets\script\app.coffee" />
     <Compile Include="Controllers\Administration\OrganisationsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
@@ -135,6 +136,16 @@
     <Compile Include="Models\Security\RegisterModel.cs" />
     <Compile Include="Models\Security\ChangePasswordModel.cs" />
     <Compile Include="Models\Security\SignOnModel.cs" />
+    <Content Include="assets\script\main.js" />
+    <Content Include="assets\vendor\script\backbone-0.9.1.js" />
+    <Content Include="assets\vendor\script\handlebars-1.0.0.beta.6.js" />
+    <Content Include="assets\vendor\script\require-1.0.7.js" />
+    <Content Include="assets\vendor\script\require-cs-0.3.2.js" />
+    <Content Include="assets\vendor\script\require-domready-1.0.0.js" />
+    <Content Include="assets\vendor\script\require-i18n-1.0.0.js" />
+    <Content Include="assets\vendor\script\require-order-1.0.5.js" />
+    <Content Include="assets\vendor\script\require-text-1.0.7.js" />
+    <Content Include="assets\vendor\script\underscore-1.3.1.js" />
     <Content Include="Views\Shared\Dialog.cshtml" />
     <Content Include="Views\Shared\Confirm.cshtml" />
     <Content Include="Views\Users\Menu.cshtml" />
@@ -218,7 +229,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\css\" />
-    <Folder Include="assets\script\" />
     <Folder Include="assets\vendor\css\" />
   </ItemGroup>
   <ItemGroup>
@@ -227,7 +237,9 @@
   <ItemGroup>
     <None Include="assets\config.rb" />
     <None Include="assets\sass\main.sass" />
-    <None Include="assets\vendor\script\application.combine" />
+    <None Include="assets\script\util.coffee" />
+    <None Include="assets\script\menu.coffee" />
+    <None Include="assets\vendor\script\lib.combine" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Sessions\Menu.cshtml" />
     <Content Include="Views\Shared\Menu.cshtml" />
