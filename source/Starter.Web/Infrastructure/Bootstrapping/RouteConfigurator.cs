@@ -20,9 +20,10 @@ namespace Starter.Web
         private void ConfigureDefaultRoute()
         {
             this.Routes.MapRoute(
-                "default", 
-                "{controller}/{action}/{id}",                                              
-                new { controller = "home", action = "index", id = UrlParameter.Optional } 
+                "default",
+                "{controller}/{action}/{id}",
+                new { controller = "home", action = "index", id = UrlParameter.Optional },
+                new [] { "Starter.Web.Controllers" }
             );
         }
     }

@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@model Core.Web.ViewModelBase
+
+<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8"/>
-    <title>Starter App</title>
+    <title>Starter</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>    
     <link rel="stylesheet" href="/assets/css/main.css" media="screen">
@@ -14,23 +16,26 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script src="/assets/vendor/script/application.js" type="text/javascript"></script>
+    <script src="/assets/vendor/script/lib.js" type="text/javascript"></script>
+    <script data-main="/assets/script/main.js" src="/assets/vendor/script/require-1.0.7.js" type="text/javascript"></script>
 
     <link rel="shortcut icon" href="/assets/images/favicon.png">	
 </head>
 
-<body class="organisations">
+<body class="@Model.ControllerName" data-controller="@Model.ControllerName" data-action="@Model.ActionName">
     <div id="container">
     
-        @{ Html.RenderPartial("Header"); }
-        
-        @{ Html.RenderPartial("Sidebar"); }
+        <div id="main">
+            @{ Html.RenderPartial("Header"); }
 
-        <div id="main">    
-            @RenderBody()
+            <div id="body">    
+                @RenderBody()
+            </div>
+            
+            @{ Html.RenderPartial("Footer"); }        
         </div>
-        
-        @{ Html.RenderPartial("Footer"); }        
+
+        @{ Html.RenderPartial("Sidebar"); }
 
         @{ Html.RenderPartial("Dialog"); }
         @{ Html.RenderPartial("Confirm"); }        

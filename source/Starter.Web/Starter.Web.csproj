@@ -116,15 +116,18 @@
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <None Include="assets\sass\_content.sass" />
     <None Include="assets\sass\_navigation.sass" />
     <None Include="assets\sass\_layout.sass" />
     <None Include="assets\sass\_dialog.sass" />
+    <Compile Include="Controllers\Administration\OrganisationsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AreaRegistration\Administration.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Bootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\FilterRegistrar.cs" />
     <Compile Include="Infrastructure\Bootstrapping\RouteConfigurator.cs" />
@@ -136,6 +139,10 @@
     <Content Include="Views\Shared\Confirm.cshtml" />
     <Content Include="Views\Users\Menu.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Actions.cshtml" />
+    <Content Include="Views\Administration\Organisations\Actions.cshtml" />
+    <Content Include="Views\Administration\Organisations\Index.cshtml" />
+    <Content Include="Views\Administration\Organisations\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\date.png" />
@@ -213,9 +220,6 @@
     <Folder Include="assets\css\" />
     <Folder Include="assets\script\" />
     <Folder Include="assets\vendor\css\" />
-    <Folder Include="Views\Administration\Locations\" />
-    <Folder Include="Views\Administration\Organisations\" />
-    <Folder Include="Views\Administration\Permissions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Layouts\Remote.cshtml" />
@@ -226,7 +230,6 @@
     <None Include="assets\vendor\script\application.combine" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Sessions\Menu.cshtml" />
-    <Content Include="Views\Users\Search.cshtml" />
     <Content Include="Views\Shared\Menu.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\Sidebar.cshtml" />

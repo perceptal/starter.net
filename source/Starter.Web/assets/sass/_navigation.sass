@@ -89,13 +89,13 @@ nav.side
 	li.active
 		background: #eee
 		border-color: #ddd
+		a
+			color: #900
 	a
 		color: #333
 		padding-right: 5px
 	a:hover
 		color: #c00
-	a.active
-		color: #900
 
 nav.secondary
 	+border-radius(3px)
@@ -111,10 +111,6 @@ nav.secondary
 
 	a:hover
 		color: #900
-	a.active
-		color: #c00
-	a.active:after
-		content: " \2192"
 
 	ul, li
 		display: inline
@@ -122,6 +118,11 @@ nav.secondary
 		padding-left: 10px
 	ul
 		+box-sizing(border-box)
+	li.active
+		a
+			color: #c00
+		a:after
+			content: " \2192"
 
 	input.search
 		+border-radius(3px)
@@ -129,7 +130,7 @@ nav.secondary
 		+opacity(0.8)
 		+shadow(0.1)
 		outline: none
-		font-size: 1em
+		font-size: 0.9em
 		border: 0
 		background: #fff url("/assets/images/magnifier.png") no-repeat 8px center	
 		font-weight: normal

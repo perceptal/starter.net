@@ -14,3 +14,4 @@ _ReSharper.*/
 VERSION
 *.nupkg
 .sass-cache/
+App_Data/

@@ -18,10 +18,11 @@ body.organisations
 	background: $admin
 
 #container
-	width: 950px
+	+clearfix
+	+box-sizing(border-box)
+	width: 1000px
 	margin: 0 auto
 	padding: 0
-	clear: both
 
 header
 	width: 100%
@@ -40,11 +41,15 @@ header
 
 div#main
 	+box-sizing(border-box)
+	float: left
+	width: 75%
+
+div#body
+	+box-sizing(border-box)
 	+shadow(0.2)
 	+border-radius(3px)
 	position: relative
 	background: #fff
-	width: 700px
 	min-height: 400px
 	margin: 0 0 20px 0
 	padding: 10px
@@ -65,8 +70,8 @@ footer
 	font-size: 0.9em
 
 aside#sidebar
-	position: fixed
-	left: 900px
-	top: 20px
-	width: 250px
+	+box-sizing(border-box)
+	float: left
+	margin: 20px
 	padding: 0
+	width: 20%
