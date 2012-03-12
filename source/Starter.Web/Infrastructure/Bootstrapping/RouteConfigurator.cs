@@ -13,17 +13,29 @@ namespace Starter.Web
         {
             this.Routes = routes;
 
-            this.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            ConfigureDefaultRoute();
+            Ignore();
+            System();
+            Default();
         }
 
-        private void ConfigureDefaultRoute()
+        private void Ignore()
+        {
+            this.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+        }
+
+        private void System()
+        {
+            this.Routes.MapRoute("about", "about", new { controller = "home", action = "about" });
+            this.Routes.MapRoute("contact", "contact", new { controller = "home", action = "contact" });
+        }
+
+        private void Default()
         {
             this.Routes.MapRoute(
                 "default",
                 "{controller}/{action}/{id}",
                 new { controller = "home", action = "index", id = UrlParameter.Optional },
-                new [] { "Starter.Web.Controllers" }
+                new[] { "Starter.Web.Controllers" }
             );
         }
     }

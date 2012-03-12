@@ -40,8 +40,8 @@
 		navigate $link.attr("href"), determine_route($link)
 
 	return {
-		click: (selector) ->
-			$(selector).click on_click
+		click: (container, link) ->
+			$(container).delegate(link, "click", on_click)
 	}
 
 )

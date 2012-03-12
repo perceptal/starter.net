@@ -2,6 +2,6 @@
 
 	return {
 		initialize: ->
-			menu.click "nav a"
+			menu.click "nav", "a"
 	}
 )

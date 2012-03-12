@@ -14,22 +14,23 @@ namespace Starter.Web.Controllers
 
         public ActionResult Index()
         {
-            //var member = new Member() { Name = "Johnny Hall", Email = "johnny@recipher.co.uk" };
-            //member.Accounts.Add(new Account("recipher", Site.Twitter));
-            // member.Role = new Role() { Name = "administrator" };
-
-            // this.Service.Register(member);
-
             var model = base.GetModel();
-
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
 
             return View(model);
         }
 
         public ActionResult About()
         {
-            return View();
+            var model = base.GetModel();
+
+            return View(model);
+        }
+
+        public ActionResult Contact()
+        {
+            var model = base.GetModel();
+
+            return View(model);
         }
     }
 }

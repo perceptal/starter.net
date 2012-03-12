@@ -186,7 +186,7 @@ div#body {
 
 /* line 68, ../sass/_layout.sass */
 footer {
-  margin: 10px;
+  margin: 10px 0 10px 10px;
   font-size: 0.9em;
 }
 
@@ -451,6 +451,32 @@ nav.secondary input:focus, nav.secondary input:hover {
 /* line 152, ../sass/_navigation.sass */
 nav.secondary input.searching {
   background: white url("/assets/images/loading.gif") no-repeat 8px center;
+}
+
+/* line 155, ../sass/_navigation.sass */
+footer nav {
+  display: inline;
+  float: right;
+}
+/* line 159, ../sass/_navigation.sass */
+footer nav ul, footer nav li {
+  display: inline;
+}
+/* line 161, ../sass/_navigation.sass */
+footer nav li {
+  padding: 0 5px;
+  border-left: 1px solid #cccccc;
+}
+/* line 164, ../sass/_navigation.sass */
+footer nav li:nth-child(1) {
+  border-left: none;
+}
+/* line 166, ../sass/_navigation.sass */
+footer nav ul {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* line 63, ../sass/_content.sass */

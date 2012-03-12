@@ -151,3 +151,17 @@ nav.secondary
 
 	input.searching
 		background: #fff url("/assets/images/loading.gif") no-repeat 8px center	
+
+footer nav
+	display: inline
+	float: right
+
+	ul, li
+		display: inline
+	li
+		padding: 0 5px
+		border-left: 1px solid #ccc
+	li:nth-child(1)
+		border-left: none
+	ul
+		+box-sizing(border-box)
