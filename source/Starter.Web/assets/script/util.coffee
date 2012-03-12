@@ -10,5 +10,8 @@
 			$("nav li.loading").fadeOut 200
 			$("body").css
 				cursor: "default"
+
+		supports_history: ->
+			!!(window.history and window.history.pushState)
 	}
 )

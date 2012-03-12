@@ -117,9 +117,11 @@
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
     <None Include="assets\sass\_content.sass" />
+    <None Include="assets\sass\_form.sass" />
     <None Include="assets\sass\_navigation.sass" />
     <None Include="assets\sass\_layout.sass" />
     <None Include="assets\sass\_dialog.sass" />
+    <None Include="assets\sass\_common.sass" />
     <None Include="assets\script\app.coffee" />
     <Compile Include="Controllers\Administration\OrganisationsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -154,6 +156,8 @@
     <Content Include="Views\Administration\Organisations\Actions.cshtml" />
     <Content Include="Views\Administration\Organisations\Index.cshtml" />
     <Content Include="Views\Administration\Organisations\Menu.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Users\User.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\date.png" />
@@ -225,7 +229,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\css\" />

@@ -6,17 +6,14 @@
 		action = link.attr("class") or "index"
 		controller = link.parent().attr("id") or link.parent().attr("class") or $("body").attr("data-controller")
 		area = link.parent().attr("data-area") or link.parent().parent().attr("data-area") or controller
-		action = action.substr(0, action.indexOf(",")) if action.indexOf(",") >= 0
-      
-		controller = controller.substr(0, controller.indexOf(","))  if controller.indexOf(",") >= 0
       
 		area: area.toLowerCase()
 		controller: controller.toLowerCase()
 		action: action.toLowerCase()
 
-	navigate = (url, route) ->
+	retrieve = (url, route) ->
 		$content = $("#body")
-
+		
 		util.spin()
 
 		$.ajax(
@@ -24,12 +21,12 @@
 			dataType: "html",
 			type: "get"
 		).success((data) ->
-			display $content, data, route
+			$content.trigger "navigate.page", 
+				html: data, 
+				route: route,
+				url: url
 		).complete ->
 			util.unspin()
-
-	display = ($content, data, route) ->
-		$content.html data
 
 	on_click = (e) ->
 		e.preventDefault()
@@ -37,10 +34,10 @@
 
 		$link = $(this)
 
-		navigate $link.attr("href"), determine_route($link)
+		retrieve $link.attr("href"), determine_route($link)
 
 	return {
-		click: (container, link) ->
+		init_click: (container, link) ->
 			$(container).delegate(link, "click", on_click)
 	}
 

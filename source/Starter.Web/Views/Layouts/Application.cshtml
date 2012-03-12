@@ -24,11 +24,10 @@
 
 <body class="@Model.ControllerName" data-controller="@Model.ControllerName" data-action="@Model.ActionName">
     <div id="container">
-    
         <div id="main">
             @{ Html.RenderPartial("Header"); }
 
-            <div id="body">    
+            <div id="body">
                 @RenderBody()
             </div>
             
@@ -40,7 +39,6 @@
         @{ Html.RenderPartial("Dialog"); }
         @{ Html.RenderPartial("Confirm"); }        
     </div>
-
 </body>
 </html>
 	
