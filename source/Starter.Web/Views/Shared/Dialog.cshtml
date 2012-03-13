@@ -1,7 +1,6 @@
-﻿<div id="dialog">
-    <span class="message info"></span>
-    <span class="message warning"></span>
-    <span class="message error"></span>
-    <span class="message loading"></span>
+﻿@model Core.Web.MessageModel
+
+<div id="dialog">
+    <span class="message @Model.Classifier.ToString().ToLowerInvariant()">@Model.Text</span>
     <a class="close">close</a>
 </div>

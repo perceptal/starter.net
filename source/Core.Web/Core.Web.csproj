@@ -71,6 +71,7 @@
     <Compile Include="Infrastructure\INavigationDefinition.cs" />
     <Compile Include="Infrastructure\IRouteConfiguration.cs" />
     <Compile Include="Model\MessageModel.cs" />
+    <Compile Include="Model\NavigationModel.cs" />
     <Compile Include="Model\ViewModelBase.cs" />
     <Compile Include="Navigation\Definition\Action.cs" />
     <Compile Include="Navigation\Definition\Application.cs" />

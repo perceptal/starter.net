@@ -14,7 +14,8 @@ namespace Starter.Web.Controllers
 
         public ActionResult Index()
         {
-            var model = base.GetModel();
+            var model = base.GetModel()
+                .WithInformationalMessage("This is an information message");
 
             return View(model);
         }

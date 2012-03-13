@@ -158,6 +158,7 @@
     <Content Include="Views\Administration\Organisations\Menu.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Users\User.cshtml" />
+    <Content Include="Views\Shared\Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\date.png" />
@@ -243,6 +244,7 @@
   <ItemGroup>
     <None Include="assets\config.rb" />
     <None Include="assets\sass\main.sass" />
+    <None Include="assets\script\page.coffee" />
     <None Include="assets\script\util.coffee" />
     <None Include="assets\script\menu.coffee" />
     <None Include="assets\vendor\script\lib.combine" />

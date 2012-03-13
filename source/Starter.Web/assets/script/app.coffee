@@ -1,4 +1,4 @@
-﻿define(["jquery", "menu", "page"], ($, menu, page) ->
+﻿define(["jquery", "menu", "page", "dialog"], ($, menu, page, dialog) ->
 
 	$content = $("#body")
 
@@ -10,6 +10,8 @@
 	init = () ->
 		menu.init_click "nav", "a"
 		$content.bind "navigate.page", navigate
+		dialog.bind()
+		dialog.trigger()
 
 	return {
 		initialize: ->

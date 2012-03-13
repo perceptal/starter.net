@@ -866,77 +866,76 @@ legend span {
 /* line 18, ../sass/_dialog.sass */
 #dialog .message, #confirm .message {
   position: relative;
-  display: none;
   padding: 0 10px 0 26px;
   margin: 4px;
   font-size: 0.9em;
 }
-/* line 25, ../sass/_dialog.sass */
+/* line 24, ../sass/_dialog.sass */
 #dialog a, #confirm a {
   color: #990000;
   cursor: pointer;
   text-decoration: none;
   z-index: 999999;
 }
-/* line 31, ../sass/_dialog.sass */
+/* line 30, ../sass/_dialog.sass */
 #dialog a.close, #confirm a.close {
   font-size: 0.8em;
 }
-/* line 34, ../sass/_dialog.sass */
+/* line 33, ../sass/_dialog.sass */
 #dialog a.yes, #dialog a.no, #confirm a.yes, #confirm a.no {
   padding-left: 10px;
 }
-/* line 37, ../sass/_dialog.sass */
+/* line 36, ../sass/_dialog.sass */
 #dialog a.no, #confirm a.no {
   color: #777777;
 }
-/* line 40, ../sass/_dialog.sass */
+/* line 39, ../sass/_dialog.sass */
 #dialog a.close:hover, #dialog a.yes:hover, #confirm a.close:hover, #confirm a.yes:hover {
   color: #cc0000;
 }
-/* line 43, ../sass/_dialog.sass */
+/* line 42, ../sass/_dialog.sass */
 #dialog a.no:hover, #confirm a.no:hover {
   color: black;
 }
-/* line 46, ../sass/_dialog.sass */
+/* line 45, ../sass/_dialog.sass */
 #dialog .questions, #confirm .questions {
   font-size: 0.9em;
   margin-top: 10px;
   padding-left: 20px;
 }
 
-/* line 51, ../sass/_dialog.sass */
-.message.info {
+/* line 50, ../sass/_dialog.sass */
+.message.information {
   background: transparent url("/assets/images/info.png") no-repeat 1px 1px;
   color: #000066;
 }
 
-/* line 54, ../sass/_dialog.sass */
+/* line 53, ../sass/_dialog.sass */
 .message.warning {
   background: transparent url("/assets/images/warning.png") no-repeat 1px 1px;
   color: #330000;
 }
 
-/* line 57, ../sass/_dialog.sass */
+/* line 56, ../sass/_dialog.sass */
 .message.error {
   background: transparent url("/assets/images/error.png") no-repeat 1px 1px;
   color: #990000;
 }
 
-/* line 60, ../sass/_dialog.sass */
+/* line 59, ../sass/_dialog.sass */
 .message.question {
   background: transparent url("/assets/images/question.png") no-repeat 1px 1px;
   color: #000066;
 }
 
-/* line 63, ../sass/_dialog.sass */
+/* line 62, ../sass/_dialog.sass */
 .message.loading {
   background: transparent url("/assets/images/loading.gif") no-repeat 1px 1px;
   color: #330000;
 }
 
 /* Reveal dialog */
-/* line 69, ../sass/_dialog.sass */
+/* line 68, ../sass/_dialog.sass */
 .reveal-modal-bg {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
   opacity: 0.15;
@@ -950,7 +949,7 @@ legend span {
   left: 0;
 }
 
-/* line 80, ../sass/_dialog.sass */
+/* line 79, ../sass/_dialog.sass */
 .reveal-modal {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -973,31 +972,31 @@ legend span {
   padding: 6px 6px 2px 6px;
 }
 
-/* line 93, ../sass/_dialog.sass */
+/* line 92, ../sass/_dialog.sass */
 .reveal-modal.small {
   width: 200px;
   margin-left: -140px;
 }
 
-/* line 96, ../sass/_dialog.sass */
+/* line 95, ../sass/_dialog.sass */
 .reveal-modal.medium {
   width: 400px;
   margin-left: -240px;
 }
 
-/* line 99, ../sass/_dialog.sass */
+/* line 98, ../sass/_dialog.sass */
 .reveal-modal.large {
   width: 600px;
   margin-left: -340px;
 }
 
-/* line 102, ../sass/_dialog.sass */
+/* line 101, ../sass/_dialog.sass */
 .reveal-modal.xlarge {
   width: 800px;
   margin-left: -440px;
 }
 
-/* line 107, ../sass/_dialog.sass */
+/* line 106, ../sass/_dialog.sass */
 .reveal-modal .close-reveal-modal {
   text-shadow: 0 0 2px black;
   font-size: 14px;
@@ -1010,12 +1009,12 @@ legend span {
   text-decoration: none;
 }
 
-/* line 119, ../sass/_dialog.sass */
+/* line 118, ../sass/_dialog.sass */
 .reveal-modal .close-reveal-modal:hover {
   text-shadow: 0 0 0 #cc0000;
   color: #cc0000;
 }
-/* line 123, ../sass/_dialog.sass */
+/* line 122, ../sass/_dialog.sass */
 .reveal-modal img {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;

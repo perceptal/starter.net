@@ -36,7 +36,7 @@
 
         @{ Html.RenderPartial("Sidebar"); }
 
-        @{ Html.RenderPartial("Dialog"); }
+        @{ Html.RenderPartial("Dialog", Model.Message); }
         @{ Html.RenderPartial("Confirm"); }        
     </div>
 </body>
