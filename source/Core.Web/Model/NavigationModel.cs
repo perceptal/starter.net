@@ -7,5 +7,8 @@ namespace Core.Web
 {
     public class NavigationModel
     {
+        public NavigationModel(Page navigation)
+        {
+        }
     }
 }

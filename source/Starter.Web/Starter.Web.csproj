@@ -244,7 +244,9 @@
   <ItemGroup>
     <None Include="assets\config.rb" />
     <None Include="assets\sass\main.sass" />
+    <None Include="assets\script\dialog.coffee" />
     <None Include="assets\script\page.coffee" />
+    <None Include="assets\script\timer.coffee" />
     <None Include="assets\script\util.coffee" />
     <None Include="assets\script\menu.coffee" />
     <None Include="assets\vendor\script\lib.combine" />

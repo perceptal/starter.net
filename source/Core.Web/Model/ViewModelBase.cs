@@ -23,7 +23,7 @@ namespace Core.Web
         /// <summary>
         /// Navigation hierarchy
         /// </summary>
-        public Page Navigation { get; protected set; }
+        public NavigationModel Navigation { get; protected set; }
 
         /// <summary>
         /// The currently logged on user
@@ -50,18 +50,6 @@ namespace Core.Web
         /// </summary>
         public MessageModel Message { get; private set; }
 
-
-        /// <summary>
-        /// Used to initialise the identity
-        /// </summary>
-        //public ViewModelBase WithIdentity(IPlatformIdentity identity, List<string> claims)
-        //{
-        //    this.Identity = identity;
-        //    this.Claims = claims;
-
-        //    return this;
-        //}
-
         /// <summary>
         /// Set route information
         /// </summary>
@@ -78,7 +66,7 @@ namespace Core.Web
         /// </summary>
         public ViewModelBase WithNavigation(Page navigation)
         {
-            this.Navigation = navigation;
+            this.Navigation = new NavigationModel(navigation);
 
             return this;
         }
@@ -89,8 +77,7 @@ namespace Core.Web
         public ViewModelBase WithException(Exception ex)
         {
             this.Exception = ex;
-
-            return this;
+            return WithErrorMessage(ex.Message);
         }
 
         /// <summary>
