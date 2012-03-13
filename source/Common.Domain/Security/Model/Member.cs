@@ -9,6 +9,7 @@ namespace Common.Domain
         public Member()
         {
             this.Accounts = new HashSet<Account>();
+            this.Roles = new HashSet<Role>();
         }
 
         public virtual string Name { get; set; }
@@ -17,7 +18,7 @@ namespace Common.Domain
 
         public virtual Password Password { get; set; }
 
-        public virtual Role Role { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }
     }

@@ -244,6 +244,11 @@
   <ItemGroup>
     <None Include="assets\config.rb" />
     <None Include="assets\sass\main.sass" />
+    <None Include="assets\script\confirm.coffee" />
+    <None Include="assets\script\controllers\controller.coffee" />
+    <None Include="assets\script\controllers\home.coffee" />
+    <None Include="assets\script\controllers\organisations.coffee" />
+    <None Include="assets\script\controllers\users.coffee" />
     <None Include="assets\script\dialog.coffee" />
     <None Include="assets\script\page.coffee" />
     <None Include="assets\script\timer.coffee" />

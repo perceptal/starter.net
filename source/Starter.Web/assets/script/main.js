@@ -11,12 +11,14 @@
         , i18n: "../vendor/script/require-i18n-1.0.0"
         , cs: "../vendor/script/require-cs-0.3.2"
     },
-    waitSeconds: 1,
+    waitSeconds: 2,
 
     // For easier development, disable browser caching:
     urlArgs: 'bust=' + (new Date()).getTime()
 });
 
 require(["domready", "app"], function (domready, app) {
-    domready(function () { app.initialize(); });
+    domready(function () {
+        app.initialize(); 
+    });
 });

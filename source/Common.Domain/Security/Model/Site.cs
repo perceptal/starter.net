@@ -10,6 +10,11 @@ namespace Common.Domain
         Twitter,
         Facebook,
         Flickr,
-        Vimeo
+        Vimeo,
+        YouTube,
+        Pinterest,
+        Instagram,
+        Foursquare,
+        GitHub
     }
 }

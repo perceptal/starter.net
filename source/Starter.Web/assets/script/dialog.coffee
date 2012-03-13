@@ -1,16 +1,12 @@
-﻿define(["jquery", "timer"], ($, timer) ->
+﻿define(["jquery", "timer", "util"], ($, timer, util) ->
 	
+	$content = $("#body")
 	$dialog = $("#dialog")
 	$message = $dialog.find(".message")
 	$close = $dialog.find("a.close")
 
-	position = () ->
-		$dialog.css
-			top:($(window).scrollTop() + 175) + "px", 
-			left:"50%", margin:"-" + ($dialog.height() / 2) + "px 0 0 -" + ($dialog.width() / 2) + "px"
-
-	is_loading = () ->
-		$message.hasClass "loading" and $message.text.length > 0
+	is_loading_dialog = () ->
+		$message.hasClass "loading" and $message.text().length > 0
 
 	return {
 		set: (text, classifier) ->
@@ -18,17 +14,17 @@
 			$message.addClass classifier
 			$message.text text
 
-			this.trigger
+			this.trigger()
 
 		clear: ->
 			this.set ""
 			
 		show: ->
-			if $message.text.length > 0
-				position()			
+			if $message.text().length > 0
+				util.centre $dialog		
 				$dialog.fadeIn 500
 
-				timer.delay(10000, () -> $dialog.hide()) if !is_loading()
+				timer.delay(10000, () -> $dialog.hide()) if !is_loading_dialog()
 
 			else
 				$dialog.hide()
@@ -40,6 +36,7 @@
 		bind: ->
 			$dialog.bind "change.dialog", this.show
 			$close.click this.hide
+			$content.bind "navigate.page", this.hide
 
 		trigger: ->
 			$dialog.trigger "change.dialog"
