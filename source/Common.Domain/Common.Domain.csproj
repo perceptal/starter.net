@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Config\CommonDomainModule.cs" />
     <Compile Include="Config\CommonAutomappingConfiguration.cs" />
+    <Compile Include="Security\Config\PhotoMappingOverride.cs" />
     <Compile Include="Security\Config\PersonMappingOverride.cs" />
     <Compile Include="Security\Config\SecurityKeyMappingOverride.cs" />
     <Compile Include="Security\Config\GroupMappingOverride.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Security\Model\Account.cs" />
     <Compile Include="Security\Model\Person.cs" />
     <Compile Include="Security\Model\Group.cs" />
+    <Compile Include="Security\Model\Photo.cs" />
     <Compile Include="Security\Model\Right.cs" />
     <Compile Include="Security\Model\Role.cs" />
     <Compile Include="Security\Model\Email.cs" />

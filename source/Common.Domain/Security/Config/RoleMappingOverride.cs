@@ -9,9 +9,9 @@ namespace Common.Domain.Config
     {
         public void Override(AutoMapping<Role> mapping)
         {
-            mapping.HasManyToMany<User>(role => role.Users)
+            mapping.HasManyToMany<Person>(role => role.Persons)
                .Table("Membership")
-               .ParentKeyColumn("MemberId")
+               .ParentKeyColumn("PersonId")
                .ChildKeyColumn("RoleId")
                .Inverse()
                .AsSet();

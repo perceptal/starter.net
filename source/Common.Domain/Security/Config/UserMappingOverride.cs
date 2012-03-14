@@ -13,12 +13,6 @@ namespace Common.Domain.Config
             mapping.Map(u => u.IsLocked);
             mapping.Map(u => u.ForcePasswordChange);
             mapping.Map(u => u.IsSupport);
-
-            mapping.HasManyToMany<Role>(u => u.Roles)
-                .Table("Membership")
-                .ParentKeyColumn("RoleId")
-                .ChildKeyColumn("MemberId")
-                .AsSet();
         }
     }
 }

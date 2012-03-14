@@ -8,7 +8,6 @@ namespace Common.Domain
     {
         public User()
         {
-            this.Roles = new HashSet<Role>();
         }
 
         public virtual string Username { get; set; }
@@ -26,8 +25,6 @@ namespace Common.Domain
         public virtual DateTime? LastSignOnAt { get; set; }
 
         public virtual bool IsSupport { get; set; }
-
-        public virtual ICollection<Role> Roles { get; set; }
 
         public virtual Person Person { get; set; }
     }

@@ -8,6 +8,8 @@ namespace Common.Domain
     {
         public Person()
         {
+            this.Roles = new HashSet<Role>();
+            this.Photos = new HashSet<Photo>();
             this.Accounts = new HashSet<Account>();
         }
 
@@ -36,6 +38,10 @@ namespace Common.Domain
         public virtual Group Group { get; set; }
 
         public virtual User User { get; set; }
+
+        public virtual ICollection<Role> Roles { get; set; }
+
+        public virtual ICollection<Photo> Photos { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }
     }

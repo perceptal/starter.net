@@ -16,7 +16,18 @@ namespace Common.Domain.Config
             mapping.Map(p => p.Gender).CustomType(typeof(Gender));
             mapping.Map(p => p.MaritalStatus).CustomType(typeof(Marital));
 
-            mapping.HasMany<Account>(u => u.Accounts)
+            mapping.HasManyToMany<Role>(p => p.Roles)
+                .Table("Membership")
+                .ParentKeyColumn("RoleId")
+                .ChildKeyColumn("PersonId")
+                .AsSet();
+
+            mapping.HasMany<Photo>(p => p.Photos)
+                .Table("Photo")
+                .KeyColumns.Add("PersonId")
+                .AsSet();
+
+            mapping.HasMany<Account>(p => p.Accounts)
                 .Table("[Account]")
                 .Component(c =>
                     {
