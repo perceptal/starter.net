@@ -25,6 +25,7 @@ namespace Common.Domain.Config
             mapping.HasMany<Photo>(p => p.Photos)
                 .Table("Photo")
                 .KeyColumns.Add("PersonId")
+                .Inverse()
                 .AsSet();
 
             mapping.HasMany<Account>(p => p.Accounts)

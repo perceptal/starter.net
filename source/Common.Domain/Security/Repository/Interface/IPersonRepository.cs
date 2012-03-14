@@ -5,6 +5,8 @@ namespace Common.Domain
 {
     public interface IPersonRepository
     {
+        Person Get(int id);
+
         Person GetByEmail(string email);
 
         IList<Person> List();

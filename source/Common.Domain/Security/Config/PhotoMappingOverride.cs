@@ -9,7 +9,7 @@ namespace Common.Domain.Config
     {
         public void Override(AutoMapping<Photo> mapping)
         {
-            mapping.Map(p => p.Image).CustomType("BinaryBlob");
+            mapping.Map(p => p.Image).Length(2147483647);
         }
     }
 }

@@ -85,11 +85,15 @@
     <Compile Include="Security\Model\Password.cs" />
     <Compile Include="Security\Model\SecurityKey.cs" />
     <Compile Include="Security\Model\User.cs" />
+    <Compile Include="Security\Repository\GroupRepository.cs" />
+    <Compile Include="Security\Repository\Interface\IGroupRepository.cs" />
     <Compile Include="Security\Repository\UserRepository.cs" />
     <Compile Include="Security\Repository\Interface\IUserRepository.cs" />
     <Compile Include="Security\Repository\Interface\IPersonRepository.cs" />
     <Compile Include="Security\Repository\PersonRepository.cs" />
     <Compile Include="Security\Service\AuthenticationService.cs" />
+    <Compile Include="Security\Service\GroupService.cs" />
+    <Compile Include="Security\Service\Interface\IGroupService.cs" />
     <Compile Include="Security\Service\Interface\IAuthenticationService.cs" />
     <Compile Include="Security\Service\Interface\IPersonService.cs" />
     <Compile Include="Security\Service\PersonService.cs" />

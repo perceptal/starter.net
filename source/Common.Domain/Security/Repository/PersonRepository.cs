@@ -14,6 +14,11 @@ namespace Common.Domain.Implementation
             this.Repository = repository;
         }
 
+        public Person Get(int id)
+        {
+            return this.Repository.FindBy(person => person.Id == id);
+        }
+
         public Person GetByEmail(string email)
         {
             return this.Repository.FindBy(person => person.Email.Value == email);
