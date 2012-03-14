@@ -13,6 +13,8 @@ namespace Core.Persistence.Implementation
     {
         public ISessionFactory Build<T>(string application, DefaultAutomappingConfiguration config)
         {
+            string script;
+
             var factory = Fluently.Configure()
 
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey(application)))
@@ -27,7 +29,7 @@ namespace Core.Persistence.Implementation
                                             c.Add<DefaultStringLengthConvention>();
                                         })))
 
-                .ExposeConfiguration(c => new SchemaUpdate(c).Execute(true, true))
+                .ExposeConfiguration(c => new SchemaUpdate(c).Execute(s => script = s, true))
 
                 .BuildSessionFactory();
 

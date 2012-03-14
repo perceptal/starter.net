@@ -8,7 +8,7 @@ using NHibernate;
 
 namespace Common.Domain.Config
 {
-    public class CommonDomainModule : DomainModule<Member>
+    public class CommonDomainModule : DomainModule<User>
     {
         public CommonDomainModule(string application)
             : base(application, new CommonAutomappingConfiguration())
@@ -32,7 +32,7 @@ namespace Common.Domain.Config
 
         private static void RegisterServices(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(typeof(Member).Assembly)
+            builder.RegisterAssemblyTypes(typeof(User).Assembly)
                 .Where(t => t.Name.EndsWith("Service"))
                 .AsImplementedInterfaces();
         }

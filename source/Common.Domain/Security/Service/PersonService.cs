@@ -5,28 +5,28 @@ using System.Text;
 
 namespace Common.Domain.Implementation
 {
-    public class MembershipService : IMembershipService
+    public class PersonService : IPersonService
     {
-        public MembershipService(IMemberRepository repository)
+        public PersonService(IPersonRepository repository)
         {
             this.Repository = repository;
         }
 
-        private IMemberRepository Repository { get; set; }
+        private IPersonRepository Repository { get; set; }
 
-        public Member Register(Member member)
+        public Person Register(Person person)
         {
-            if (EmailExists(member.Email))
+            if (EmailExists(person.Email))
             {
                 throw new ArgumentException("This email address has already been registered.", "email");
             }
 
-            this.Repository.Submit(member);
+            this.Repository.Submit(person);
 
-            return member;
+            return person;
         }
 
-        public IList<Member> List()
+        public IList<Person> List()
         {
             return this.Repository.List();
         }

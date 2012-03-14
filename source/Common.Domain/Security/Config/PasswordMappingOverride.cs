@@ -9,10 +9,9 @@ namespace Common.Domain.Config
     {
         public void Override(AutoMapping<Password> mapping)
         {
-            mapping.Map(password => 
-                password.Value)
-                    .Column("Password")
-                    .Access.ReadOnly();
+            mapping.Map(password => password.Value)
+                .Column("Password")
+                .Access.ReadOnly();
         }
     }
 }

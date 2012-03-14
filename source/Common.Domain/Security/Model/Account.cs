@@ -28,4 +28,17 @@ namespace Common.Domain
             yield return Site;
         }
     }
+
+    public enum Site
+    {
+        Twitter,
+        Facebook,
+        Flickr,
+        Vimeo,
+        YouTube,
+        Pinterest,
+        Instagram,
+        Foursquare,
+        GitHub
+    }
 }

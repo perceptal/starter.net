@@ -4,6 +4,6 @@ namespace Common.Domain
 {
     public interface IAuthenticationService
     {
-        bool Authenticate(Member user);
+        bool Authenticate(User user);
     }
 }

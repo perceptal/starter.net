@@ -9,6 +9,13 @@ namespace Common.Domain.Config
     {
         public void Override(AutoMapping<Role> mapping)
         {
+            mapping.HasManyToMany<User>(role => role.Users)
+               .Table("Membership")
+               .ParentKeyColumn("MemberId")
+               .ChildKeyColumn("RoleId")
+               .Inverse()
+               .AsSet();
+            
             mapping.HasMany<Claim>(role => role.Claims)
                 .Table("[Claim]")
                 .Component(c =>
