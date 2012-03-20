@@ -9,7 +9,7 @@ namespace Common.Domain
         public Role() 
         {
             this.Claims = new HashSet<Claim>();
-            this.Persons = new HashSet<Person>();
+            this.Users = new HashSet<User>();
         }
 
         public virtual string Name { get; set; }
@@ -18,6 +18,6 @@ namespace Common.Domain
 
         public virtual ICollection<Claim> Claims { get; set; }
 
-        public virtual ICollection<Person> Persons { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

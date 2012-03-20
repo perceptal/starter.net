@@ -8,6 +8,12 @@ namespace Common.Domain
     {
         public User()
         {
+            this.Roles = new HashSet<Role>();
+        }
+
+        public User(string username) : this()
+        {
+            this.Username = username;
         }
 
         public virtual string Username { get; set; }
@@ -27,5 +33,7 @@ namespace Common.Domain
         public virtual bool IsSupport { get; set; }
 
         public virtual Person Person { get; set; }
+
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }

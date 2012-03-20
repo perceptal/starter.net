@@ -7,6 +7,6 @@ namespace Common.Domain
     {
         User GetByUserName(string username);
 
-        void Submit(User user);
+        User Submit(User user);
     }
 }

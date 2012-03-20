@@ -14,11 +14,12 @@ namespace Core.Web
     public class BootstrapperBase
     {
         public BootstrapperBase(
-            Assembly assembly, IRouteConfiguration route, IFilterRegistrar filter, INavigationDefinition navigation)
+            Assembly assembly, IRouteConfiguration route, IFilterRegistrar filter, INavigationDefinition navigation, IMappingConfiguration mapping)
         {
             this.Assembly = assembly;
             this.RouteConfigurator = route;
             this.FilterRegistrar = filter;
+            this.MappingConfigurator = mapping;
 
             this.Navigation = navigation.Get();
         }
@@ -27,6 +28,7 @@ namespace Core.Web
         private Page Navigation { get; set; }
         private IRouteConfiguration RouteConfigurator { get; set; }
         private IFilterRegistrar FilterRegistrar { get; set; }
+        private IMappingConfiguration MappingConfigurator { get; set; }
 
         public IContainer Bootstrap(string application)
         {
@@ -46,8 +48,11 @@ namespace Core.Web
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
-            this.FilterRegistrar.RegisterGlobalFilters(GlobalFilters.Filters);
+            this.FilterRegistrar
+                .RegisterGlobalFilters(GlobalFilters.Filters)
+                .RegisterFilters(GlobalFilters.Filters);
             this.RouteConfigurator.Configure(RouteTable.Routes);
+            this.MappingConfigurator.Configure();
 
             return container;
         }

@@ -7,33 +7,50 @@ namespace Common.Domain.Implementation
 {
     public class PersonService : IPersonService
     {
-        public PersonService(IPersonRepository repository)
+        public PersonService(IPersonRepository pr, IPersonFactory pf, IUserRepository ur, IUserFactory uf)
         {
-            this.Repository = repository;
+            this.PersonRepository = pr;
+            this.PersonFactory = pf;
+            this.UserRepository = ur;
+            this.UserFactory = uf;
         }
 
-        private IPersonRepository Repository { get; set; }
+        private IPersonRepository PersonRepository { get; set; }
+        private IUserRepository UserRepository { get; set; }
 
-        public Person Register(Person person)
+        private IPersonFactory PersonFactory { get; set; }
+        private IUserFactory UserFactory { get; set; }
+
+        public Person Register(Person person, Group group)
         {
-            if (EmailExists(person.Email))
-            {
-                throw new ArgumentException("This email address has already been registered.", "email");
-            }
+            ValidateEmail(person);
 
-            this.Repository.Submit(person);
+            var user = this.UserRepository.Submit(this.UserFactory.Create(person.FirstName + person.LastName));
+            return this.PersonRepository.Submit(this.PersonFactory.Create(person, group, user));
+        }
 
-            return person;
+        public Person Save(Person person)
+        {
+            //ValidateEmail(person);
+            return this.PersonRepository.Submit(person);
         }
 
         public IList<Person> List()
         {
-            return this.Repository.List();
+            return this.PersonRepository.List();
         }
 
-        private bool EmailExists(string email)
+        private void ValidateEmail(Person person)
         {
-            return this.Repository.GetByEmail(email) != null;
+            if (EmailExists(person))
+            {
+                throw new ArgumentException("This email address has already been registered.", "person.Email");
+            }
+        }
+
+        private bool EmailExists(Person person)
+        {
+            return this.PersonRepository.GetByEmail(person.Email) != null;
         }
     }
 }

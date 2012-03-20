@@ -9,6 +9,18 @@ namespace Common.Domain.Config
     {
         public void Override(AutoMapping<Group> mapping)
         {
+            mapping.Map(g => g.Level).CustomType(typeof(GroupLevel));
+
+            mapping.Component<Email>(group => group.Email, email =>
+            {
+                email.Map(e => e.Value).Column("Email");
+            });
+
+            mapping.Component<Contact>(group => group.Contact, contact =>
+            {
+                contact.Map(c => c.Number).Column("Contact");
+            });
+
             mapping.HasMany<Group>(g => g.Children)
                 .Table("[Group]")
                 .Inverse()

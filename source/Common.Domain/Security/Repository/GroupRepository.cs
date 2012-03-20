@@ -19,19 +19,36 @@ namespace Common.Domain.Implementation
             return this.Repository.FindBy(group => group.Id == id);
         }
 
+        public Group GetRoot()
+        {
+            return this.Repository.FindBy(group => group.Parent == null);
+        }
+
         public Group GetByCode(string code)
         {
             return this.Repository.FindBy(group => group.Code == code);
         }
 
-        public IList<Group> List()
+        public IList<Group> ListOrganisations()
         {
-            return this.Repository.QueryAll().ToList();
+            return this.Repository.QueryBy(group => (int)group.Level < (int)GroupLevel.Group).ToList();
         }
 
-        public void Submit(Group group)
+        public IList<Group> ListGroups()
+        {
+            return this.Repository.QueryBy(group => group.Level == GroupLevel.Group).ToList();
+        }
+
+        public IList<Group> Search(string query)
+        {
+            return this.Repository.QueryBy(group => group.Name.Contains(query)).ToList();
+        }
+
+        public Group Submit(Group group)
         {
             this.Repository.Save(group);
+
+            return group;
         }
     }
 }

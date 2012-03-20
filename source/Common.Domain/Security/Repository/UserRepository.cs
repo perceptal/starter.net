@@ -19,9 +19,10 @@ namespace Common.Domain.Implementation
             return this.Repository.FindBy(user => user.Username == username);
         }
 
-        public void Submit(User user)
+        public User Submit(User user)
         {
             this.Repository.Save(user);
+            return user;
         }
     }
 }

@@ -7,7 +7,7 @@ using Starter.Web.Models;
 
 namespace Starter.Web.Controllers
 {
-    public class SessionsController : PlatformController
+    public partial class SessionsController : PlatformController
     {
         public SessionsController(ISecurityManager security, IConfigManager config)
             : base(security, config)
@@ -15,18 +15,19 @@ namespace Starter.Web.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
-        public ActionResult SignOn()
+        public virtual ActionResult New()
         {
             return View();
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult SignOn(SignOnModel model)
+        public virtual ActionResult Create(SignOnModel model)
         {
             return View();
         }
 
-        public ActionResult SignOut()
+        [AcceptVerbs(HttpVerbs.Delete)]
+        public virtual ActionResult Destroy()
         {
             return View();
         }

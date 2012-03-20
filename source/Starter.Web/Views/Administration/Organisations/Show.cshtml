@@ -1,0 +1,11 @@
+﻿@model OrganisationViewModel
+
+@{ Html.RenderPartial("Administration/Organisations/Menu"); }
+
+@{ Html.RenderPartial("Organisation", Model, new ViewDataDictionary {{ "class", "item" }}); }
+
+<div class="content">
+    @{ Html.RenderPartial("Actions"); }
+
+    @{ Html.RenderPartial("Form", Model); }    
+</div>

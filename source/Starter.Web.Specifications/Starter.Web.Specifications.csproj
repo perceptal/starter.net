@@ -54,6 +54,10 @@
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Mapping\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="BeforeBuild">
     <Exec Command="&quot;$(SolutionDir)Tools\NuGet&quot; install &quot;$(ProjectDir)packages.config&quot; -o &quot;$(SolutionDir)packages&quot;" />

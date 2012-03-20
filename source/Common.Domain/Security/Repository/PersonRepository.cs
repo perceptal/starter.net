@@ -29,9 +29,11 @@ namespace Common.Domain.Implementation
             return this.Repository.QueryAll().ToList();
         }
 
-        public void Submit(Person person)
+        public Person Submit(Person person)
         {
             this.Repository.Save(person);
+
+            return person;
         }
     }
 }

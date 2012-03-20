@@ -1,8 +1,10 @@
-﻿<header>
+﻿@model Core.Web.NavigationModel
+
+<header>
     <h2 id="home">
         <a href="/">Starter</a>
     </h2>
 
-    @{ Html.RenderPartial("Menu"); }
+    @{ Html.RenderPartial("Navigation", Model.Get("main")); }
 
 </header>

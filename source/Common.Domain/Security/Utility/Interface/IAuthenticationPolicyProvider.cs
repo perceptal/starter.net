@@ -6,8 +6,8 @@ namespace Common.Domain
     {
         short MaximumAuthenticationFailuresBeforeLock { get; }
 
-        Password GenerateRandomPassword(string logon);
+        Password GenerateRandomPassword(string username);
 
-        Password GeneratePassword(string logon, string password);
+        Password GeneratePassword(string username, string password);
     }
 }

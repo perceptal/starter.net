@@ -72,10 +72,16 @@
     <Compile Include="Security\Config\GroupMappingOverride.cs" />
     <Compile Include="Security\Config\RoleMappingOverride.cs" />
     <Compile Include="Security\Config\UserMappingOverride.cs" />
-    <Compile Include="Security\Config\EmailMappingOverride.cs" />
     <Compile Include="Security\Config\PasswordMappingOverride.cs" />
+    <Compile Include="Security\Factory\GroupFactory.cs" />
+    <Compile Include="Security\Factory\Interface\IGroupFactory.cs" />
+    <Compile Include="Security\Factory\Interface\IPersonFactory.cs" />
+    <Compile Include="Security\Factory\Interface\IUserFactory.cs" />
+    <Compile Include="Security\Factory\PersonFactory.cs" />
+    <Compile Include="Security\Factory\UserFactory.cs" />
     <Compile Include="Security\Model\Claim.cs" />
     <Compile Include="Security\Model\Account.cs" />
+    <Compile Include="Security\Model\Contact.cs" />
     <Compile Include="Security\Model\Person.cs" />
     <Compile Include="Security\Model\Group.cs" />
     <Compile Include="Security\Model\Photo.cs" />

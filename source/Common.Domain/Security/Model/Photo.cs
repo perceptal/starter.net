@@ -9,6 +9,12 @@ namespace Common.Domain
         {
         }
 
+        public Photo(string caption, byte[] image)
+        {
+            this.Caption = caption;
+            this.Image = image;
+        }
+
         public virtual byte[] Image { get; set; }
 
         public virtual string Caption { get; set; }

@@ -6,7 +6,9 @@ namespace Common.Domain
 {
     public class Email : ValueObject<Email>
     {
-        public Email() {}
+        public Email() : this(string.Empty)
+        {
+        }
 
         public Email(string email)
         {
@@ -22,7 +24,7 @@ namespace Common.Domain
 
         public static implicit operator string(Email email)
         {
-            return email.Value;
+            return email == null ? string.Empty : email.Value;
         }
 
         protected override IEnumerable<object> Reflect()

@@ -6,31 +6,15 @@ using Core.Web.Config;
 
 namespace Starter.Web.Controllers
 {
-    public class HomeController : PlatformController
+    public partial class HomeController : PlatformController
     {
         public HomeController(ISecurityManager security, IConfigManager config) : base(security, config)
         {
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
-            var model = base.GetModel();
-
-            return View(model);
-        }
-
-        public ActionResult About()
-        {
-            var model = base.GetModel();
-
-            return View(model);
-        }
-
-        public ActionResult Contact()
-        {
-            var model = base.GetModel();
-
-            return View(model);
+            return View();
         }
     }
 }

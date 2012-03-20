@@ -2,41 +2,36 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using Core.Web;
+using Core.Web.Routing;
 
-namespace Starter.Web
+namespace Starter.Web.Infrastructure
 {
-    public class RouteConfigurator : IRouteConfiguration
+    public class RouteConfigurator : RouteConfiguratorBase
     {
-        public RouteCollection Routes { get; set; }
-
-        public void Configure(RouteCollection routes)
+        public override void Configure(RouteCollection routes)
         {
-            this.Routes = routes;
+            base.Configure(routes);
 
-            Ignore();
-            System();
-            Default();
+            Resources();
         }
 
-        private void Ignore()
+        private void Resources()
         {
-            this.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-        }
+            var o = Resource.Named("organisations")
+                .Scoped("administration")
+                .With(
+                    Resource.Named("permissions"),
+                    Resource.Named("groups"));
 
-        private void System()
-        {
-            this.Routes.MapRoute("about", "about", new { controller = "home", action = "about" });
-            this.Routes.MapRoute("contact", "contact", new { controller = "home", action = "contact" });
-        }
+            var m = Resource.Named("members")
+                .Collection("search", "archived", "recent")
+                .Member("lock", "unlock", "archive", "upload")
+                .With(
+                    Resource.Named("photos").Member("default"),
+                    Resource.Named("roles"));
 
-        private void Default()
-        {
-            this.Routes.MapRoute(
-                "default",
-                "{controller}/{action}/{id}",
-                new { controller = "home", action = "index", id = UrlParameter.Optional },
-                new[] { "Starter.Web.Controllers" }
-            );
+            AddResource(o);
+            AddResource(m);
         }
     }
 }

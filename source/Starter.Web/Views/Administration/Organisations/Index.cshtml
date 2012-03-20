@@ -1,30 +1,9 @@
-﻿@{ Html.RenderPartial("Administration/Organisations/Menu"); }
+﻿@model OrganisationListViewModel
 
-<article class="organisation item">
-    <img src="/assets/images/group.png" />
+@{ Html.RenderPartial("Administration/Organisations/Menu"); }
 
-    <div class="info">
-        <div class="heading">
-            <strong>Perceptal Engineering</strong>
-            <span class="info">380800</span>
-        </div>
-
-        <div class="detail">
-            <span class="phone">01896 830894</span>
-            <span class="email"><a href="mailto:engineer@perceptal.co.uk">engineer@perceptal.co.uk</a></span>
-        </div>
-    </div>
-            
-    <ul>
-        <li><a href="/">lock</a></li>
-        <li><a href="/">open</a></li>
-    </ul>
-</article>
-
-<div class="content">
-    @{ Html.RenderPartial("Actions"); }
-
-    <section>
-        Form
-    </section>
-</div>
+@foreach (var org in Model.Organisations) 
+{
+    Html.RenderPartialWithData("Organisation", org, new { @class = "list" });
+}
+    

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using Starter.Web.Infrastructure;
 
 namespace Starter.Web
 {

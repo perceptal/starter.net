@@ -17,7 +17,7 @@ namespace Common.Domain.Implementation
 
         private IAuthenticationPolicyProvider Policy { get; set; }
 
-        public bool Authenticate(User user)
+        public bool Authenticate(string username, string password)
         {
             return true;
         }

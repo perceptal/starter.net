@@ -6,13 +6,13 @@ using Core.Web.Config;
 
 namespace Starter.Web.Controllers
 {
-    public class UsersController : PlatformController
+    public partial class MembersController : PlatformController
     {
-        public UsersController(ISecurityManager security, IConfigManager config) : base(security, config)
+        public MembersController(ISecurityManager security, IConfigManager config) : base(security, config)
         {
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             var model = base.GetModel()
                 .WithInformationalMessage("This is an information message");
@@ -20,28 +20,28 @@ namespace Starter.Web.Controllers
             return View(model);
         }
 
-        public ActionResult Search()
+        public virtual ActionResult Search()
         {
             var model = base.GetModel();
 
             return View(model);
         }
 
-        public ActionResult Recent()
+        public virtual ActionResult Recent()
         {
             var model = base.GetModel();
 
             return View(model);
         }
 
-        public ActionResult Favourites()
+        public virtual ActionResult Favourites()
         {
             var model = base.GetModel();
 
             return View(model);
         }
 
-        public ActionResult Archive()
+        public virtual ActionResult Archive()
         {
             var model = base.GetModel();
 

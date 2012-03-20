@@ -9,12 +9,13 @@ using Core.Config;
 using Core.Web;
 using Core.Web.Config;
 
-namespace Starter.Web
+namespace Starter.Web.Infrastructure
 {
     public class Bootstrapper : BootstrapperBase
     {
         public Bootstrapper()
-            : base(typeof(WebApplication).Assembly, new RouteConfigurator(), new FilterRegistrar(), new NavigationDefinition())
+            : base(typeof(WebApplication).Assembly, 
+                    new RouteConfigurator(), new FilterRegistrar(), new NavigationDefinition(), new MappingConfigurator())
         {
         }
     }

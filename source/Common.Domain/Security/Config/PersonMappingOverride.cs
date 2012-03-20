@@ -9,6 +9,8 @@ namespace Common.Domain.Config
     {
         public void Override(AutoMapping<Person> mapping)
         {
+            mapping.IgnoreProperty(p => p.FullName);
+
             mapping.References<Group>(p => p.Group);
 
             mapping.Map(p => p.LeftOn);
@@ -16,26 +18,38 @@ namespace Common.Domain.Config
             mapping.Map(p => p.Gender).CustomType(typeof(Gender));
             mapping.Map(p => p.MaritalStatus).CustomType(typeof(Marital));
 
-            mapping.HasManyToMany<Role>(p => p.Roles)
-                .Table("Membership")
-                .ParentKeyColumn("RoleId")
-                .ChildKeyColumn("PersonId")
-                .AsSet();
+            mapping.Component<Email>(group => group.Email, email =>
+            {
+                email.Map(e => e.Value).Column("Email");
+            });
 
             mapping.HasMany<Photo>(p => p.Photos)
                 .Table("Photo")
                 .KeyColumns.Add("PersonId")
                 .Inverse()
+                .Cascade.All()
                 .AsSet();
 
             mapping.HasMany<Account>(p => p.Accounts)
                 .Table("[Account]")
                 .Component(c =>
-                    {
-                        c.Map(account => account.Identity).Column("[Identity]");
-                        c.Map(account => account.Site).CustomType(typeof(Site));
-                    })
+                {
+                    c.Map(account => account.Identity).Column("[Identity]");
+                    c.Map(account => account.Site).CustomType(typeof(Site));
+                })
                 .KeyColumns.Add("PersonId")
+                .Cascade.All()
+                .AsSet();
+
+            mapping.HasMany<Contact>(p => p.Contacts)
+                .Table("[Contact]")
+                .Component(c =>
+                {
+                    c.Map(contact => contact.Number).Column("[Number]");
+                    c.Map(contact => contact.Type).CustomType(typeof(ContactType));
+                })
+                .KeyColumns.Add("PersonId")
+                .Cascade.All()
                 .AsSet();
         }
     }

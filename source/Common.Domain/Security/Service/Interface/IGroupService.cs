@@ -5,10 +5,18 @@ namespace Common.Domain
 {
     public interface IGroupService
     {
+        Group Setup();
+
         Group Register(Group group);
 
-        Group AddLocation(Group group);
+        Group AddGroup(Group group, Group parent);
 
-        IList<Group> List();
+        Group Get(int id);
+
+        IList<Group> ListOrganisations();
+
+        IList<Group> ListGroups();
+
+        IList<Group> Search(string query);
     }
 }

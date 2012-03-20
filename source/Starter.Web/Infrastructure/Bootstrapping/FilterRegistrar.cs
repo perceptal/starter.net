@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using Core.Web;
 
-namespace Starter.Web
+namespace Starter.Web.Infrastructure
 {
-    public class FilterRegistrar : IFilterRegistrar
+    public class FilterRegistrar : FilterRegistrarBase
     {
-        public void RegisterGlobalFilters(GlobalFilterCollection filters)
+        public override IFilterRegistrar RegisterFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            return this;
         }
     }
 }

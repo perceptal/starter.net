@@ -54,6 +54,12 @@
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Factory\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="BeforeBuild">
     <Exec Command="&quot;$(SolutionDir)Tools\NuGet&quot; install &quot;$(ProjectDir)packages.config&quot; -o &quot;$(SolutionDir)packages&quot;" />

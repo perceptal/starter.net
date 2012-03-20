@@ -1,0 +1,16 @@
+﻿@model OrganisationViewModel
+
+@using (Html.BeginForm())
+{
+    <section>
+        <fieldset>
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name)
+
+            @Html.LabelFor(m => m.Code)
+            @Html.TextBoxFor(m => m.Code)
+
+            <input type="submit" value="Save&rarr;" />
+        </fieldset>
+    </section>
+}

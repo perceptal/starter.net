@@ -11,7 +11,7 @@
 
 	first_init = () ->
 		$content.bind "navigate.page", navigate
-		menu.init_click "nav", "a"
+		menu.init_click "ul", "a"
 		page.set_navigation()
 		dialog.bind()
 		dialog.trigger()

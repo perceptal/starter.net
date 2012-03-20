@@ -7,10 +7,16 @@ namespace Common.Domain
     {
         Group Get(int id);
 
+        Group GetRoot();
+
         Group GetByCode(string code);
 
-        IList<Group> List();
+        IList<Group> ListOrganisations();
 
-        void Submit(Group group);
+        IList<Group> ListGroups();
+
+        IList<Group> Search(string query);
+
+        Group Submit(Group group);
     }
 }

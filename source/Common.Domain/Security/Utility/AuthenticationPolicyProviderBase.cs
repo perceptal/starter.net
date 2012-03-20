@@ -16,18 +16,18 @@ namespace Common.Domain.Implementation
             this.SaltProvider = saltProvider;
         }
 
-        public virtual Password GenerateRandomPassword(string logon)
+        public virtual Password GenerateRandomPassword(string username)
         {
-            return GeneratePassword(logon, this.SaltProvider.GenerateSalt());
+            return GeneratePassword(username, this.SaltProvider.GenerateSalt());
         }
 
         public abstract short MaximumAuthenticationFailuresBeforeLock { get; }
 
-        public Password GeneratePassword(string logon, string password)
+        public Password GeneratePassword(string username, string password)
         {
-            String salt = this.SaltProvider.GenerateSalt();
+            string salt = this.SaltProvider.GenerateSalt();
 
-            return new Password(salt, this.HashProvider.HashData(logon + password + salt));
+            return new Password(this.HashProvider.HashData(username + password + salt), salt);
         }
     }
 }

@@ -25,7 +25,7 @@
 <body class="@Model.ControllerName" data-controller="@Model.ControllerName" data-action="@Model.ActionName">
     <div id="container">
         <div id="main">
-            @{ Html.RenderPartial("Header"); }
+            @{ Html.RenderPartial("Header", Model.Navigation); }
 
             <div id="body">
                 @RenderBody()

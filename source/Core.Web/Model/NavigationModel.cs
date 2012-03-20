@@ -9,6 +9,14 @@ namespace Core.Web
     {
         public NavigationModel(Page navigation)
         {
+            this.Navigation = navigation;
+        }
+
+        private Page Navigation { get; set; }
+
+        public Page Get(string key)
+        {
+            return this.Navigation;
         }
     }
 }

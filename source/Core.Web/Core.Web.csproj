@@ -40,10 +40,14 @@
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\..\packages\Autofac.Mvc3.2.4.5.724\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\packages\AutoMapper.2.1.265\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies\System.Web.WebPages.dll</HintPath>
@@ -61,15 +65,25 @@
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Base\PlatformViewEngine.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Handlers\ImageGenerator.cs" />
+    <Compile Include="Handlers\ImageHandler.cs" />
     <Compile Include="Infrastructure\BootstrapperBase.cs" />
     <Compile Include="Base\PlatformController.cs" />
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Config\CoreWebModule.cs" />
     <Compile Include="Config\Interface\IConfigManager.cs" />
     <Compile Include="Constants\Constants.cs" />
-    <Compile Include="Infrastructure\IFilterRegistrar.cs" />
-    <Compile Include="Infrastructure\INavigationDefinition.cs" />
-    <Compile Include="Infrastructure\IRouteConfiguration.cs" />
+    <Compile Include="Infrastructure\FilterRegistrarBase.cs" />
+    <Compile Include="Infrastructure\Interface\IMappingConfiguration.cs" />
+    <Compile Include="Infrastructure\Interface\IFilterRegistrar.cs" />
+    <Compile Include="Infrastructure\Interface\INavigationDefinition.cs" />
+    <Compile Include="Infrastructure\Interface\IRouteConfiguration.cs" />
+    <Compile Include="Infrastructure\MappingConfiguratorBase.cs" />
+    <Compile Include="Routing\Resource.cs" />
+    <Compile Include="Routing\ResourceAction.cs" />
+    <Compile Include="Routing\ResourceData.cs" />
+    <Compile Include="Routing\RouteConfiguratorBase.cs" />
     <Compile Include="Model\MessageModel.cs" />
     <Compile Include="Model\NavigationModel.cs" />
     <Compile Include="Model\ViewModelBase.cs" />
@@ -88,7 +102,11 @@
     <Compile Include="Navigation\Model\PageExtensions.cs" />
     <Compile Include="Navigation\Model\PageOption.cs" />
     <Compile Include="Navigation\Model\Parameter.cs" />
+    <Compile Include="Routing\ResourceRouteGenerator.cs" />
+    <Compile Include="Security\AnonymousIdentity.cs" />
+    <Compile Include="Security\Interface\IPlatformIdentity.cs" />
     <Compile Include="Security\Interface\ISecurityManager.cs" />
+    <Compile Include="Security\PlatformIdentity.cs" />
     <Compile Include="Security\SecurityManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,8 +123,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Routing\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="BeforeBuild">

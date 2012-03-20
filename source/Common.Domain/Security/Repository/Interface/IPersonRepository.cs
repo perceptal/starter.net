@@ -11,6 +11,6 @@ namespace Common.Domain
 
         IList<Person> List();
 
-        void Submit(Person person);
+        Person Submit(Person person);
     }
 }

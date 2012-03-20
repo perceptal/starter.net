@@ -1,6 +1,6 @@
 ﻿using Core.Web;
 
-namespace Starter.Web
+namespace Starter.Web.Infrastructure
 {
     public class NavigationDefinition : INavigationDefinition
     {

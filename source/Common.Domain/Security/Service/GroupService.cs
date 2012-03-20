@@ -7,35 +7,55 @@ namespace Common.Domain.Implementation
 {
     public class GroupService : IGroupService
     {
-        public GroupService(IGroupRepository repository)
+        public GroupService(IGroupRepository repository, IGroupFactory factory)
         {
             this.Repository = repository;
+            this.Factory = factory;
         }
 
         private IGroupRepository Repository { get; set; }
+
+        private IGroupFactory Factory { get; set; }
+
+        public Group Setup()
+        {
+            return this.Repository.Submit(this.Factory.CreateRoot());
+        }
 
         public Group Register(Group group)
         {
             if (CodeExists(group.Code))
             {
-                throw new ArgumentException("This code is already in use.", "code");
+                throw new ArgumentException("This code is already in use.", "group.Code");
             }
 
-            this.Repository.Submit(group);
-
-            return group;
+            return this.Repository.Submit(
+                this.Factory.CreateOrganisation(group, this.Repository.GetRoot()));
         }
 
-        public Group AddLocation(Group group)
-        { 
-            this.Repository.Submit(group);
-
-            return group;
-        }
-
-        public IList<Group> List()
+        public IList<Group> ListGroups()
         {
-            return this.Repository.List();
+            return this.Repository.ListGroups();
+        }
+
+        public Group AddGroup(Group group, Group parent)
+        {
+            return this.Repository.Submit(this.Factory.CreateGroup(group, parent));
+        }
+
+        public Group Get(int id)
+        {
+            return this.Repository.Get(id);
+        }
+
+        public IList<Group> ListOrganisations()
+        {
+            return this.Repository.ListOrganisations();
+        }
+
+        public IList<Group> Search(string query)
+        {
+            return this.Repository.Search(query);
         }
 
         private bool CodeExists(string code)

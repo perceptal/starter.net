@@ -298,14 +298,16 @@ nav#user ul li.loading {
   padding-left: 26px;
 }
 
-/* line 76, ../sass/_navigation.sass */
-nav ul.home li.home a,
-nav ul.settings li.settings a,
-nav ul.profile li.profile a,
-nav ul.password li.password a,
-nav ul.users li.users a,
-nav ul.organisations li.organisations a,
-nav ul.sessions li.sessions a {
+/* line 78, ../sass/_navigation.sass */
+nav#main ul.home li.home a,
+nav#main ul.settings li.settings a,
+nav#main ul.profile li.profile a,
+nav#main ul.password li.password a,
+nav#main ul.users li.users a,
+nav#main ul.aboutus li.aboutus a,
+nav#main ul.contactus li.contactus a,
+nav#main ul.organisations li.organisations a,
+nav#main ul.sessions li.sessions a, nav#users ul.home li.home a, nav#users ul.settings li.settings a, nav#users ul.profile li.profile a, nav#users ul.password li.password a, nav#users ul.users li.users a, nav#users ul.aboutus li.aboutus a, nav#users ul.contactus li.contactus a, nav#users ul.organisations li.organisations a, nav#users ul.sessions li.sessions a, nav#security ul.home li.home a, nav#security ul.settings li.settings a, nav#security ul.profile li.profile a, nav#security ul.password li.password a, nav#security ul.users li.users a, nav#security ul.aboutus li.aboutus a, nav#security ul.contactus li.contactus a, nav#security ul.organisations li.organisations a, nav#security ul.sessions li.sessions a {
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
   -o-box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px, rgba(0, 0, 0, 0.2) 0 1px 1px;
@@ -320,18 +322,27 @@ nav ul.sessions li.sessions a {
   background: #eeeeee;
 }
 
-/* line 79, ../sass/_navigation.sass */
+/* line 86, ../sass/_navigation.sass */
+footer nav ul.support li.support a,
+footer nav ul.help li.help a,
+footer nav ul.aboutus li.aboutus a,
+footer nav ul.contactus li.contactus a {
+  color: #cc0000;
+  text-decoration: underline;
+}
+
+/* line 90, ../sass/_navigation.sass */
 nav.side {
   padding: 5px 0 10px 10px;
   text-align: right;
   height: 100%;
   font-size: 0.8em;
 }
-/* line 85, ../sass/_navigation.sass */
+/* line 96, ../sass/_navigation.sass */
 nav.side ul.pages, nav.side ul.actions {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
-/* line 88, ../sass/_navigation.sass */
+/* line 99, ../sass/_navigation.sass */
 nav.side li {
   -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
@@ -350,26 +361,26 @@ nav.side li {
   margin-bottom: 5px;
   padding: 8px;
 }
-/* line 94, ../sass/_navigation.sass */
+/* line 105, ../sass/_navigation.sass */
 nav.side li.active {
   background: #eeeeee;
   border-color: #dddddd;
 }
-/* line 97, ../sass/_navigation.sass */
+/* line 108, ../sass/_navigation.sass */
 nav.side li.active a {
   color: #990000;
 }
-/* line 99, ../sass/_navigation.sass */
+/* line 110, ../sass/_navigation.sass */
 nav.side a {
   color: #333333;
   padding-right: 5px;
 }
-/* line 102, ../sass/_navigation.sass */
+/* line 113, ../sass/_navigation.sass */
 nav.side a:hover {
   color: #cc0000;
 }
 
-/* line 105, ../sass/_navigation.sass */
+/* line 116, ../sass/_navigation.sass */
 nav.secondary {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -383,7 +394,7 @@ nav.secondary {
   margin-bottom: 10px;
   padding: 6px 0;
 }
-/* line 113, ../sass/_navigation.sass */
+/* line 124, ../sass/_navigation.sass */
 nav.secondary a {
   color: #777777;
   padding: 4px;
@@ -392,34 +403,34 @@ nav.secondary a {
   font-size: 16px;
   font-size: 16px;
 }
-/* line 117, ../sass/_navigation.sass */
+/* line 128, ../sass/_navigation.sass */
 nav.secondary a:hover {
   color: #990000;
 }
-/* line 120, ../sass/_navigation.sass */
+/* line 131, ../sass/_navigation.sass */
 nav.secondary ul, nav.secondary li {
   display: inline;
 }
-/* line 122, ../sass/_navigation.sass */
+/* line 133, ../sass/_navigation.sass */
 nav.secondary li {
   padding-left: 10px;
 }
-/* line 124, ../sass/_navigation.sass */
+/* line 135, ../sass/_navigation.sass */
 nav.secondary ul {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 127, ../sass/_navigation.sass */
+/* line 138, ../sass/_navigation.sass */
 nav.secondary li.active a {
   color: #cc0000;
 }
-/* line 129, ../sass/_navigation.sass */
+/* line 140, ../sass/_navigation.sass */
 nav.secondary li.active a:after {
   content: " \2192";
 }
-/* line 132, ../sass/_navigation.sass */
+/* line 143, ../sass/_navigation.sass */
 nav.secondary input.search {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -445,36 +456,36 @@ nav.secondary input.search {
   padding: 2px 10px 3px 30px;
   width: 250px;
 }
-/* line 145, ../sass/_navigation.sass */
+/* line 156, ../sass/_navigation.sass */
 nav.secondary input:focus, nav.secondary input:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   color: #000066;
 }
-/* line 149, ../sass/_navigation.sass */
+/* line 160, ../sass/_navigation.sass */
 nav.secondary input.searching {
   background: white url("/assets/images/loading.gif") no-repeat 8px center;
 }
 
-/* line 152, ../sass/_navigation.sass */
+/* line 163, ../sass/_navigation.sass */
 footer nav {
   display: inline;
   float: right;
 }
-/* line 156, ../sass/_navigation.sass */
+/* line 167, ../sass/_navigation.sass */
 footer nav ul, footer nav li {
   display: inline;
 }
-/* line 158, ../sass/_navigation.sass */
+/* line 169, ../sass/_navigation.sass */
 footer nav li {
   padding: 0 5px;
   border-left: 1px solid #cccccc;
 }
-/* line 161, ../sass/_navigation.sass */
+/* line 172, ../sass/_navigation.sass */
 footer nav li:nth-child(1) {
   border-left: none;
 }
-/* line 163, ../sass/_navigation.sass */
+/* line 174, ../sass/_navigation.sass */
 footer nav ul {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -563,8 +574,8 @@ article.item span.info {
 /* line 47, ../sass/_content.sass */
 article.item ul {
   position: absolute;
-  top: 20px;
-  right: 10px;
+  top: 24px;
+  right: 20px;
   display: none;
   font-size: 0.9em;
 }
@@ -664,8 +675,8 @@ article.list span.info {
 /* line 47, ../sass/_content.sass */
 article.list ul {
   position: absolute;
-  top: 20px;
-  right: 10px;
+  top: 24px;
+  right: 20px;
   display: none;
   font-size: 0.9em;
 }

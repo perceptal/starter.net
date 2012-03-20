@@ -66,6 +66,7 @@
     <Compile Include="Config\Conventions\CoreAutomappingConfiguration.cs" />
     <Compile Include="Config\Conventions\CustomForeignKeyConvention.cs" />
     <Compile Include="Config\Conventions\DefaultStringLengthConvention.cs" />
+    <Compile Include="Config\Conventions\EnumConvention.cs" />
     <Compile Include="Config\Conventions\PrimaryKeyConvention.cs" />
     <Compile Include="Config\CoreModule.cs" />
     <Compile Include="Config\DomainModule.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Domain\ValueObject.cs" />
     <Compile Include="Enforce.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Inflector.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="NHibernate\Interface\IRepository.cs" />

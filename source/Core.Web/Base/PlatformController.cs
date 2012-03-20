@@ -11,8 +11,8 @@ namespace Core.Web
 {
     public abstract class PlatformController : web.Controller
     {
-        private const string AjaxMaster = "Remote";
-        private const string DefaultMaster = "Application";
+        private const string RemoteMaster = "Remote";
+        private const string ApplicationMaster = "Application";
 
         protected PlatformController(ISecurityManager security, IConfigManager config)
         {
@@ -20,17 +20,19 @@ namespace Core.Web
             this.Config = config;
         }
 
-        protected ISecurityManager Security { get; set; }
+        public ISecurityManager Security { get; set; }
 
-        protected IConfigManager Config { get; private set; }
+        public IConfigManager Config { get; private set; }
 
-        public virtual string ControllerName { get; set; }
+        public string ControllerName { get; set; }
 
-        public virtual string ActionName { get; set; }
+        public string ActionName { get; set; }
 
-        public virtual bool IsAjaxRequest { get; private set; }
+        public bool IsAjaxRequest { get; private set; }
 
-        public virtual bool IsJsonRequest { get; private set; }
+        public bool IsJsonRequest { get; private set; }
+
+        public bool IsModelPopulated { get; private set; }
 
         protected override void Initialize(RequestContext requestContext)  
         {  
@@ -45,60 +47,35 @@ namespace Core.Web
             base.Execute(context);
         }
 
-        //protected override ViewResult View(IView view, object model)
-        //{
-        //    if (!(model is ViewModelBase) || ((ViewModelBase)model).Identity == null)
-        //    {
-        //        throw new InvalidOperationException("Model data must have been populated using GetModel<TViewModel>()");
-        //    }
+        protected override ViewResult View(IView view, object model)
+        {
+            if (model == null)
+            {
+                model = this.GetModel();    
+            }
 
-        //    return base.View(view, model);
-        //}
+            if (!(model is ViewModelBase)) // || ((ViewModelBase)model).Identity == null)
+            {
+                throw new InvalidOperationException("Model data must have been populated using GetModel<TViewModel>()");
+            }
+
+            return base.View(view, model);
+        }
 
         protected override ViewResult View(string view, string master, object model)
         {
-            master = this.GetMaster(master);
-
-            return base.View(view, master, model);
+            return base.View(view, this.GetMaster(master), model);
         }
 
         private string GetMaster(string master)
         {
             if (this.IsAjaxRequest)
             {
-                return AjaxMaster;
+                return RemoteMaster;
             }
 
-            return string.IsNullOrEmpty(master) ? DefaultMaster : master;
+            return master.IsNullOrEmpty() ? ApplicationMaster : master;
         }
-
-        //protected virtual RedirectToRouteResult RedirectToHome()
-        //{
-        //    return RedirectToHome(string.Empty);
-        //}
-
-        //protected virtual RedirectToRouteResult RedirectToHome(string message)
-        //{
-        //    var home = this.Config.Navigation.GetRootPage().GetDefaultChildAction();
-
-        //    return this.RedirectToAction(
-        //        home.Override,
-        //        home.Controller().Override);
-        //}
-
-        //protected virtual RedirectToRouteResult RedirectToDefault()
-        //{
-        //    return this.RedirectToDefault(string.Empty);
-        //}
-
-        //protected virtual RedirectToRouteResult RedirectToDefault(string message)
-        //{
-        //    var active = this.Config.Navigation.Get(this.ControllerName, this.ActionName).Name;
-
-        //    // TODO: Set the temp message
-
-        //    return this.RedirectToAction(this.Config.Navigation.Default(active).Override, this.ControllerName, null);
-        //}
 
         private void ProcessHeaders(NameValueCollection headers)
         {
@@ -113,53 +90,6 @@ namespace Core.Web
                 this.IsJsonRequest = true;
             }
         }
-
-        protected RedirectToRouteResult RedirectToAction<TController>(Expression<Action<TController>> action, object routeValues) where TController : Controller
-        {
-            return RedirectToRoute(action, new RouteValueDictionary(routeValues));
-        }
-
-        protected RedirectToRouteResult RedirectToRoute<TController>(Expression<Action<TController>> action) where TController : Controller
-        {
-            return RedirectToRoute(action, null);
-        }
-
-        protected RedirectToRouteResult RedirectToRoute<TController>(Expression<Action<TController>> action, object routeValues) where TController : Controller
-        {
-            return RedirectToRoute(action, new RouteValueDictionary(routeValues));
-        }
-
-        //protected RedirectToRouteResult RedirectWithMessage<TController>(
-        //    Expression<Action<TController>> action, MessageModel messages) where TController : Controller
-        //{
-        //    return RedirectWithMessage(action, null, messages);
-        //}
-
-        //protected RedirectToRouteResult RedirectWithMessage<TController>(
-        //    Expression<Action<TController>> action, object routeValues, MessageModel messages) where TController : Controller
-        //{
-        //    return RedirectWithMessage(action, new RouteValueDictionary(routeValues), messages);
-        //}
-
-        //protected RedirectToRouteResult RedirectWithMessage<TController>(
-        //    Expression<Action<TController>> action, RouteValueDictionary routeValues, MessageModel messages) where TController : Controller
-        //{
-        //    if (this.ViewData.Model == null)
-        //    {
-        //        this.ViewData.Model = GetModel();
-        //    }
-
-        //    var model = this.ViewData.Model as ViewModelBase;
-        //    if (model == null)
-        //    {
-        //        throw new ArgumentException("View model must be of type ViewModelBase");
-        //    }
-
-        //    model.Messages.With(messages);
-
-        //    return RedirectToRoute(action, routeValues);
-        //}
-
 
         private void DetermineControllerAndAction(RouteData routeData)
         {
@@ -180,25 +110,9 @@ namespace Core.Web
         public virtual T GetModel<T>(T model) where T : ViewModelBase
         {
             return model
-                //.WithIdentity(this.Principal.Identity, this.Security.ListClaimsForUser())
+                //.WithIdentity(this.Principal.Identity)
                 .WithRoute(this.ControllerName, this.ActionName)
-                //.WithAuthenticateLink(GetAuthenticateLink())
                 .WithNavigation(this.Config.Navigation) as T;
-        }
-
-        private Page GetAuthenticateLink()
-        {
-            //var page = this.Principal.Identity.IsAuthenticated
-            //           ? this.Config.Navigation.GetByOverride(PageName.SignOut).FirstOrDefault()
-            //           : this.Config.Navigation.GetByOverride(PageName.SignOn).FirstOrDefault();
-
-            //page.Description = this.Principal.Identity.IsAuthenticated
-            //           ? "Logged in as " + this.Principal.Identity.User.UserName + "(" + this.Principal.Identity.User.GroupName + ")"
-            //           : "Not logged in";
-
-            //return page;
-
-            return null;
         }
 
         protected override void HandleUnknownAction(string action)

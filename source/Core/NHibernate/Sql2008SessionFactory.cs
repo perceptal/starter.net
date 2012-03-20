@@ -27,6 +27,7 @@ namespace Core.Persistence.Implementation
                                             c.Add<PrimaryKeyConvention>();
                                             c.Add<CustomForeignKeyConvention>();
                                             c.Add<DefaultStringLengthConvention>();
+                                            c.Add<EnumConvention>();
                                         })))
 
                 .ExposeConfiguration(c => new SchemaUpdate(c).Execute(s => script = s, true))

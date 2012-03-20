@@ -1,0 +1,21 @@
+﻿@model OrganisationViewModel
+
+<article class='organisation @ViewData["class"]'>
+    <img src="/assets/images/group.png" />
+
+    <div class="info">
+        <div class="heading">
+            <strong>@Model.Name</strong>
+            <span class="info">@Model.Code</span>
+        </div>
+
+        <div class="detail">
+            <span class="phone">@Model.ContactNumber</span>
+            <span class="email"><a href="mailto:@Model.Email">@Model.Email</a></span>
+        </div>
+    </div>
+            
+    <ul>
+        <li>@Model.Link("show", "open")</li>
+    </ul>
+</article>

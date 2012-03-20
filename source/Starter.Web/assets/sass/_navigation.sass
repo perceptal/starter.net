@@ -65,16 +65,27 @@ nav#user
 		li.loading 
 			+loading
 
-nav
+nav#main, nav#users, nav#security
 	ul.home li.home, 
 	ul.settings li.settings, 
 	ul.profile li.profile, 
 	ul.password li.password, 
 	ul.users li.users, 
+	ul.aboutus li.aboutus, 
+	ul.contactus li.contactus, 
 	ul.organisations li.organisations,
 	ul.sessions li.sessions
 		a
 			+selected
+
+footer nav
+	ul.support li.support, 
+	ul.help li.help, 
+	ul.aboutus li.aboutus, 
+	ul.contactus li.contactus, 
+		a
+			color: #c00
+			text-decoration: underline
 
 nav.side
 	padding: 5px 0 10px 10px
@@ -83,7 +94,7 @@ nav.side
 	font-size: 0.8em
 
 	ul.pages, ul.actions
-		margin-bottom: 20px
+		margin-bottom: 30px
 
 	li
 		+border-left-radius (3px)

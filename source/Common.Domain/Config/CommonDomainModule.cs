@@ -18,6 +18,7 @@ namespace Common.Domain.Config
         protected override void Load(ContainerBuilder builder)
         {
             RegisterProviders(builder);
+            RegisterFactories(builder);
             RegisterServices(builder);
 
             base.Load(builder);
@@ -28,6 +29,13 @@ namespace Common.Domain.Config
             builder.RegisterType<FormsAuthenticationHashProvider>().As<IHashProvider>();
             builder.RegisterType<CryptoSaltProvider>().As<ISaltProvider>();
             builder.RegisterType<AuthenticationPolicyProvider>().As<IAuthenticationPolicyProvider>();
+        }
+
+        private static void RegisterFactories(ContainerBuilder builder)
+        {
+            builder.RegisterAssemblyTypes(typeof(User).Assembly)
+                .Where(t => t.Name.EndsWith("Factory"))
+                .AsImplementedInterfaces();
         }
 
         private static void RegisterServices(ContainerBuilder builder)

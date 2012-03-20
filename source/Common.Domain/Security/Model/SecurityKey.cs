@@ -7,8 +7,25 @@ namespace Common.Domain
 {
     public class SecurityKey : ValueObject<SecurityKey>
     {
-        protected SecurityKey()
+        private const int Minimum = 0;
+        private const int Maximum = int.MaxValue;
+
+        public SecurityKey()
         {
+            this.Low = Minimum;
+            this.High = Maximum;
+        }
+
+        public SecurityKey(GroupLevel level, Group parent)
+        {
+            var maximums = new int[] { 1, 1000, 100 };
+
+            var parentKey = parent.SecurityKey;
+            var range = (parentKey.High / maximums[(int)level - 1]);
+            var count = parent.Children.Count;
+
+            this.Low = (count * range) + parentKey.Low;
+            this.High = ((count + 1) * range) + parentKey.Low - 1;
         }
 
         public SecurityKey(long low, long high)
