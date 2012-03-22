@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using Core.Domain;
 
@@ -64,6 +65,19 @@ namespace Common.Domain
         public virtual ICollection<Account> Accounts { get; set; }
 
         public virtual ICollection<Contact> Contacts { get; set; }
+
+        public virtual Contact PrimaryContact
+        {
+            get
+            {
+                if (this.Contacts.Any())
+                {
+                    return Contacts.First();
+                }
+
+                return new Contact();
+            }
+        }
 
         public virtual Person AddPhoto(byte[] image)
         {

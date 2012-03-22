@@ -17,17 +17,6 @@ namespace Starter.Web
         public string Email { get; set; }
 
         public string ContactNumber { get; set; }
-
-        public MvcHtmlString Link(string action, string text)
-        {
-            var link = new TagBuilder("a");
-
-            link.AddCssClass(action);
-            link.MergeAttribute("href", "/administration/organisations/{1}/{0}".FormatWith(this.Id, action));
-            link.SetInnerText(text);
-
-            return new MvcHtmlString(link.ToString());
-        }
     }
 
     public class OrganisationListViewModel : ViewModelBase

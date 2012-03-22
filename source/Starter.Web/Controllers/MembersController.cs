@@ -3,49 +3,58 @@ using Common.Domain;
 using Core.Web;
 using Core.Web.Security;
 using Core.Web.Config;
+using System.Collections.Generic;
+using AutoMapper;
 
 namespace Starter.Web.Controllers
 {
     public partial class MembersController : PlatformController
     {
-        public MembersController(ISecurityManager security, IConfigManager config) : base(security, config)
+        public MembersController(ISecurityManager security, IConfigManager config, IPersonService service) : base(security, config)
         {
+            this.Service = service;
         }
+
+        private IPersonService Service { get; set; }
 
         public virtual ActionResult Index()
         {
-            var model = base.GetModel()
-                .WithInformationalMessage("This is an information message");
-
-            return View(model);
+            return Populate(this.Service.List());
         }
 
-        public virtual ActionResult Search()
+        public virtual ActionResult Show(int id)
         {
-            var model = base.GetModel();
+            var model = Mapper.Map<Person, MemberViewModel>(this.Service.Get(id));
 
-            return View(model);
+            return View(base.GetModel<MemberViewModel>(model));
+        }
+
+        public virtual JsonResult Search(string query)
+        {
+            return new JsonResult { Data = this.Service.Search(query) };
         }
 
         public virtual ActionResult Recent()
         {
-            var model = base.GetModel();
-
-            return View(model);
+            return Populate(this.Service.Recent(0));
         }
 
         public virtual ActionResult Favourites()
         {
-            var model = base.GetModel();
-
-            return View(model);
+            return Populate(this.Service.Favourites(0));
         }
 
-        public virtual ActionResult Archive()
+        public virtual ActionResult Archived()
         {
-            var model = base.GetModel();
+            return Populate(this.Service.Archived());
+        }
 
-            return View(model);
+        private ActionResult Populate(IList<Person> people)
+        {
+            var model = Mapper.Map<IList<Person>, IList<MemberViewModel>>(people);
+
+            return View(base.GetModel<MemberListViewModel>()
+                .WithMembers(model));
         }
     }
 }

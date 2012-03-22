@@ -35,7 +35,32 @@ namespace Common.Domain.Implementation
             return this.PersonRepository.Submit(person);
         }
 
+        public Person Get(int id)
+        {
+            return this.PersonRepository.Get(id);
+        }
+
         public IList<Person> List()
+        {
+            return this.PersonRepository.List();
+        }
+
+        public IList<Person> Search(string query)
+        {
+            return this.PersonRepository.Search(query);
+        }
+
+        public IList<Person> Archived()
+        {
+            return this.PersonRepository.List();
+        }
+
+        public IList<Person> Favourites(int personId)
+        {
+            return this.PersonRepository.List();
+        }
+
+        public IList<Person> Recent(int personId)
         {
             return this.PersonRepository.List();
         }

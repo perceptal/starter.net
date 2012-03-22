@@ -19,24 +19,14 @@ namespace Core.Web.Routing
         public void MapRoute(ResourceData resource)
         {
             resource.Collection.ForEach(c => Index(resource, c));
-            Index(resource);
-
             resource.Member.ForEach(m => Show(resource, m));
+            
+            Index(resource);
             Show(resource);
-
-            resource.Member.ForEach(m => New(resource, m));
             New(resource);
-
-            resource.Member.ForEach(m => Create(resource, m));
             Create(resource);
-
-            resource.Member.ForEach(m => Edit(resource, m));
             Edit(resource);
-
-            resource.Member.ForEach(m => Update(resource, m));
             Update(resource);
-
-            resource.Member.ForEach(m => Destroy(resource, m));
             Destroy(resource);
         }
 

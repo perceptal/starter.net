@@ -1,0 +1,16 @@
+﻿@model MemberViewModel
+
+@using (Html.BeginForm())
+{
+    <section>
+        <fieldset>
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+
+            <input type="submit" value="Save&rarr;" />
+        </fieldset>
+    </section>
+}

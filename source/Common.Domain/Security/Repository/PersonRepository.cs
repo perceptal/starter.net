@@ -29,6 +29,12 @@ namespace Common.Domain.Implementation
             return this.Repository.QueryAll().ToList();
         }
 
+        public IList<Person> Search(string query)
+        {
+            return this.Repository.QueryBy(
+                person => person.FirstName.StartsWith(query) || person.LastName.StartsWith(query)).ToList();
+        }
+
         public Person Submit(Person person)
         {
             this.Repository.Save(person);

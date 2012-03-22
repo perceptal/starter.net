@@ -1,0 +1,11 @@
+﻿@model MemberViewModel
+
+@{ Html.RenderPartial("Members/Menu"); }
+
+@{ Html.RenderPartialWithData("Member", Model, new { @class = "item" }); }
+
+<div class="content">
+    @{ Html.RenderPartial("Actions", Model); }
+
+    @{ Html.RenderPartial("Form", Model); }    
+</div>

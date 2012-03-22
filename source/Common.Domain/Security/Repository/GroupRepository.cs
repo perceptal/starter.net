@@ -41,7 +41,8 @@ namespace Common.Domain.Implementation
 
         public IList<Group> Search(string query)
         {
-            return this.Repository.QueryBy(group => group.Name.Contains(query)).ToList();
+            return this.Repository.QueryBy(
+                group => group.Name.StartsWith(query) || group.Code == query.ToString()).ToList();
         }
 
         public Group Submit(Group group)

@@ -4,13 +4,13 @@
             <input class="search" placeholder="Search for users&rarr;" />
         </li>
         <li class="users">
-            <a class="recent" href="/users/recent">Recent</a>
+            @Html.ActionLink("Recent", "recent", new { @class = "recent" })
         </li>
         <li class="users">
-            <a class="favourites" href="/users/favourites">Favourites</a>
+            @Html.ActionLink("Favourites", "favourites", new { @class = "favourites" })
         </li>
         <li class="users">
-            <a class="archived" href="/users/archived">Archived</a>
+            @Html.ActionLink("Archived", "archived", new { @class = "archived" })
         </li>
     </ul>
 </nav>

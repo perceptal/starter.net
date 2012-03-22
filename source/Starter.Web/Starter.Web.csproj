@@ -142,6 +142,8 @@
     <Compile Include="Infrastructure\Bootstrapping\MappingConfigurator.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NavigationDefinition.cs" />
     <Compile Include="Models\Administration\Organisations\OrganisationViewModel.cs" />
+    <Compile Include="Models\Members\RoleViewModel.cs" />
+    <Compile Include="Models\Members\PhotoViewModel.cs" />
     <Compile Include="Models\Members\MemberViewModel.cs" />
     <Compile Include="Models\Security\RegisterModel.cs" />
     <Compile Include="Models\Security\ChangePasswordModel.cs" />
@@ -185,6 +187,8 @@
     <Content Include="Views\Administration\Organisations\Organisation.cshtml" />
     <Content Include="Views\Administration\Organisations\Show.cshtml" />
     <Content Include="Views\Administration\Organisations\Form.cshtml" />
+    <Content Include="Views\Members\Show.cshtml" />
+    <Content Include="Views\Members\Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\date.png" />

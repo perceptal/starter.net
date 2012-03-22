@@ -49,22 +49,12 @@ namespace Core.Web
 
         protected override ViewResult View(IView view, object model)
         {
-            if (model == null)
-            {
-                model = this.GetModel();    
-            }
-
-            if (!(model is ViewModelBase)) // || ((ViewModelBase)model).Identity == null)
-            {
-                throw new InvalidOperationException("Model data must have been populated using GetModel<TViewModel>()");
-            }
-
-            return base.View(view, model);
+            return base.View(view, CheckModel(model));
         }
 
         protected override ViewResult View(string view, string master, object model)
         {
-            return base.View(view, this.GetMaster(master), model);
+            return base.View(view, this.GetMaster(master), CheckModel(model));
         }
 
         private string GetMaster(string master)
@@ -75,6 +65,21 @@ namespace Core.Web
             }
 
             return master.IsNullOrEmpty() ? ApplicationMaster : master;
+        }
+
+        private object CheckModel(object model)
+        {
+            if (model == null)
+            {
+                model = this.GetModel();
+            }
+
+            if (!(model is ViewModelBase))
+            {
+                throw new InvalidOperationException("Model data must have been populated using GetModel<TViewModel>()");
+            }
+
+            return model;
         }
 
         private void ProcessHeaders(NameValueCollection headers)

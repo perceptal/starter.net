@@ -16,6 +16,6 @@
     </div>
             
     <ul>
-        <li>@Model.Link("show", "open")</li>
+        <li>@Html.ActionLink("open", "show", new { id = Model.Id })</li>
     </ul>
 </article>

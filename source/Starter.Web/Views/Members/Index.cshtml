@@ -1,19 +1,9 @@
-﻿@{ Html.RenderPartial("Members/Menu"); }
+﻿@model MemberListViewModel
 
-@{ Html.RenderPartial("Member"); }
+@{ Html.RenderPartial("Members/Menu"); }
 
-<div class="content">
-    @{ Html.RenderPartial("Members/Actions"); }
-
-    <section>
-        <fieldset>
-            <label>First Name</label>
-            <input type="text" />
-
-            <label>Last Name</label>
-            <input type="text" />
-
-            <input type="submit" value="Save&rarr;" />
-        </fieldset>
-    </section>
-</div>
+@foreach (var member in Model.Members) 
+{
+    Html.RenderPartialWithData("Member", member, new { @class = "list" });
+}
+    

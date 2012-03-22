@@ -11,6 +11,8 @@ namespace Common.Domain
 
         IList<Person> List();
 
+        IList<Person> Search(string query);
+
         Person Submit(Person person);
     }
 }

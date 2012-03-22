@@ -1,27 +1,29 @@
-﻿<nav class="side">
+﻿@model MemberViewModel
+
+<nav class="side">
     <ul class="pages">
         <li class="users">
-            <a href="/users/1">Information</a>
+            @Html.ActionLink("Information", "show", new { id = Model.Id })
         </li>
-        <li class="roles active">
-            <a href="/users/1/roles">Permissions</a>
+        <li class="roles">
+            @Html.ActionLink("Permissions", "roles", new { id = Model.Id })
         </li>
         <li class="photos">
-            <a href="/users/1/photos">Photos</a>
+            @Html.ActionLink("Photos", "photos", new { id = Model.Id })
         </li>
     </ul>
     <ul class="actions">
         <li class="users">
-            <a class="lock" href="/users/1/lock">Lock</a>
+            @Html.ActionLink("Lock", "lock", new { id = Model.Id })
         </li>
         <li class="users">
-            <a class="password" href="/users/1/password">Password</a>
+            @Html.ActionLink("Reset Password", "password", new { id = Model.Id })
         </li>
         <li class="users">
-            <a class="archive" href="/users/1/archive">Archive</a>
+            @Html.ActionLink("Archive", "archive", new { id = Model.Id })
         </li>
         <li class="photos">
-            <a class="upload" href="/users/1/photos/new">Upload Photo</a>
+            @Html.ActionLink("Upload Photo", "upload", new { id = Model.Id })
         </li>
     </ul>
 </nav>

@@ -9,6 +9,16 @@ namespace Common.Domain
 
         Person Save(Person person);
 
+        Person Get(int id);
+
         IList<Person> List();
+
+        IList<Person> Search(string query);
+
+        IList<Person> Archived();
+
+        IList<Person> Favourites(int personId);
+
+        IList<Person> Recent(int personId);
     }
 }
